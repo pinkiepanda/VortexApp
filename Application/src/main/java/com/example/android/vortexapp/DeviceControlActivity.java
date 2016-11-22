@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.bluetoothlegatt;
+package com.example.android.vortexapp;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothGattCharacteristic;
@@ -34,6 +34,8 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
+
+import com.example.android.bluetoothlegatt.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

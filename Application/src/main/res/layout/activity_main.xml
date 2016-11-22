@@ -8,15 +8,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.bluetoothlegatt.MainActivity">
+    tools:context="com.example.android.vortexapp.MainActivity">
 
     <Button
-        android:text="Button"
+        android:text="Vortex Pair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginTop="79dp"
-        android:id="@+id/button" />
+        android:layout_marginEnd="119dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/vortexPairBtn"
+        style="@style/Widget.AppCompat.Button" />
+
+    <Button
+        android:text="FMG Connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vortexPairBtn"
+        android:layout_alignEnd="@+id/vortexPairBtn"
+        android:layout_marginTop="43dp"
+        android:id="@+id/fmgConnectBtn"
+        style="@style/Widget.AppCompat.Button" />
+
 </RelativeLayout>

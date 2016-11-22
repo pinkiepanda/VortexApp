@@ -1,10 +1,18 @@
 [
     {
-        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\BluetoothLeGatt1\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\BluetoothLeGatt1\\Application\\src\\main\\res\\menu\\main.xml"
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\menu_control_activity.xml",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\menu\\menu_control_activity.xml"
     },
     {
-        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\BluetoothLeGatt1\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\gatt_services.xml",
-        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\BluetoothLeGatt1\\Application\\src\\main\\res\\menu\\gatt_services.xml"
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\menu_device_list.xml",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\menu\\menu_device_list.xml"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\gatt_services.xml",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\menu\\gatt_services.xml"
     }
 ]

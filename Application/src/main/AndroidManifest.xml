@@ -38,24 +38,38 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light">
+
         <activity
-            android:name=".DeviceScanActivity"
+            android:name="com.example.android.vortexapp.DeviceScanActivity"
             android:label="@string/app_name">
         </activity>
-        <activity android:name=".DeviceControlActivity" />
-
-        <service
-            android:name=".BluetoothLeService"
-            android:enabled="true" />
-
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main">
+            android:name="com.example.android.vortexapp.DeviceControlActivity">
+        </activity>
+        <service
+            android:name="com.example.android.vortexapp.BluetoothLeService"
+            android:enabled="true" />
+        <activity
+            android:name="com.example.android.vortexapp.MainActivity"
+            android:label="@string/app_name">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.android.vortexapp.DeviceListSPP"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name="com.example.android.vortexapp.TrainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.example.android.vortexapp.DeviceScanSPP"
+            android:label="@string/app_name">
         </activity>
     </application>
 
