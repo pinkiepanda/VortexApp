@@ -14,8 +14,11 @@ public class MainActivity extends Activity {
 
     Button vortexPairBtn, fmgConnectBtn;
     public static BluetoothSocket btSocket = null;
+    private String SPPaddress = null;
 
     public static String TARGET_ACTIVITY = "target_activity";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +61,27 @@ public class MainActivity extends Activity {
     {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1)
-            Toast.makeText(getApplicationContext(), "back from BLE", Toast.LENGTH_LONG).show();
-        else if (requestCode == 2)
-            Toast.makeText(getApplicationContext(), "back from SPP", Toast.LENGTH_LONG).show();
+        if (requestCode == 1){
+            msg("back from BLE");
+        }
+        else if (requestCode == 2){
+            //msg("back from SPP");
+            if(resultCode == RESULT_OK){
+                SPPaddress = data.getStringExtra("SPPaddress");
+                msg("SPP address is: " + SPPaddress);
+            }
+            else{
+                msg("SPP failed");
+            }
             //ActiviyFinishedNowDoSomethingAmazing();
+        }
+
+    }
+
+    // fast way to call Toast
+    private void msg(String s)
+    {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 
     /*private void openBLEScanActivity(View view){

@@ -190,7 +190,8 @@ public class DeviceListSPP extends Activity
             if (!ConnectSuccess)
             {
                 msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
-                //finish();
+                setResult(0);
+                finish();
             }
             else
             {
@@ -213,8 +214,16 @@ public class DeviceListSPP extends Activity
             catch (IOException e)
             { msg("Error");}
         }
-        finish(); //return to the first layout
 
+        Intent data = new Intent();
+        data.putExtra("SPPaddress",address);
+        setResult(RESULT_OK,data);
+        finish(); //return to the first layout
+    }
+
+    public void onBackPressed(){
+        setResult(0);
+        finish();
     }
 
     // fast way to call Toast
