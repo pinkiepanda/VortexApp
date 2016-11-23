@@ -44,6 +44,8 @@ public class TrainActivity extends Activity {
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceListSPP.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
+        //btSocket = MainActivity.btSocket;
+
         //view of the TrainActivity
         setContentView(R.layout.activity_train);
 

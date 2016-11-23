@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paired Devices"
+        android:text="Refresh List"
         android:id="@+id/pairedBtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

@@ -1,5 +1,6 @@
 package com.example.android.vortexapp;
 
+import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,6 +13,7 @@ import com.example.android.bluetoothlegatt.R;
 public class MainActivity extends Activity {
 
     Button vortexPairBtn, fmgConnectBtn;
+    public static BluetoothSocket btSocket = null;
 
     public static String TARGET_ACTIVITY = "target_activity";
 
