@@ -68,7 +68,8 @@ public class DeviceListSPP extends Activity
                 pairedDevicesList();
             }
         });
-
+        pairedDevicesList();
+        btnPaired.setVisibility(View.GONE);
     }
 
     private void pairedDevicesList()

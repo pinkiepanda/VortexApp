@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.R;
 
@@ -25,7 +26,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                openBLEScanActivity(v);      //method to turn on
+                onClickStartbLEScan(v);      //method to turn on
             }
         });
         fmgConnectBtn = (Button)findViewById(R.id.fmgConnectBtn);
@@ -34,13 +35,35 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                openSPPSCanActivity(v);      //method to turn on
+                onClickStartSPPScan(v);      //method to turn on
             }
         });
 
     }
 
-    private void openBLEScanActivity(View view){
+    public void onClickStartbLEScan(View view)
+    {
+        startActivityForResult(new Intent(this, DeviceScanActivity.class), 1);
+    }
+
+    public void onClickStartSPPScan(View view)
+    {
+        startActivityForResult(new Intent(this, DeviceListSPP.class), 2);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1)
+            Toast.makeText(getApplicationContext(), "back from BLE", Toast.LENGTH_LONG).show();
+        else if (requestCode == 2)
+            Toast.makeText(getApplicationContext(), "back from SPP", Toast.LENGTH_LONG).show();
+            //ActiviyFinishedNowDoSomethingAmazing();
+    }
+
+    /*private void openBLEScanActivity(View view){
         Intent i = new Intent(MainActivity.this, DeviceScanActivity.class);
         //Change the activity.
 
@@ -51,6 +74,5 @@ public class MainActivity extends Activity {
         Intent j = new Intent(MainActivity.this, DeviceListSPP.class);
         //Change the activity.
         startActivity(j);
-    }
-
+    }*/
 }
