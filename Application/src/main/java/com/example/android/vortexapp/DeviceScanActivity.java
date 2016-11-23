@@ -158,14 +158,19 @@ public class DeviceScanActivity extends ListActivity {
             devicename = "notvortex";
 
         if (devicename.equalsIgnoreCase("Vortex")){
-            final Intent intent = new Intent(this, DeviceControlActivity.class);
+            /*final Intent intent = new Intent(this, DeviceControlActivity.class);
             intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
             intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
             if (mScanning) {
                 mBluetoothAdapter.stopLeScan(mLeScanCallback);
                 mScanning = false;
             }
-            startActivity(intent);
+            startActivity(intent);*/
+            Intent data = new Intent();
+            data.putExtra("BLEname",device.getName());
+            data.putExtra("BLEaddress",device.getAddress());
+            setResult(RESULT_OK,data);
+            finish();
         }
         else if (!devicename.equalsIgnoreCase("Vortex"))
         {
@@ -280,6 +285,11 @@ public class DeviceScanActivity extends ListActivity {
     static class ViewHolder {
         TextView deviceName;
         TextView deviceAddress;
+    }
+
+    public void onBackPressed(){
+        setResult(0);
+        finish();
     }
 
     // fast way to call Toast

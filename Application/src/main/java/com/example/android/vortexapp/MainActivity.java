@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
     Switch activateBtn;
     public static BluetoothSocket btSocket = null;
     private String SPPaddress = null;
+    private String BLEaddress = null;
+    private String BLEname = null;
     private static boolean activated = false;
     public static String TARGET_ACTIVITY = "target_activity";
 
@@ -79,7 +81,15 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 1){
-            msg("back from BLE");
+            //msg("back from BLE");
+            if(resultCode == RESULT_OK){
+                BLEaddress = data.getStringExtra("BLEaddress");
+                BLEname = data.getStringExtra("BLEname");
+                msg("Device \"" + BLEname + "\" at: " + BLEaddress);
+            }
+            else{
+                msg("BLE failed");
+            }
         }
         else if (requestCode == 2){
             //msg("back from SPP");
