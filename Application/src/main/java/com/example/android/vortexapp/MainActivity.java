@@ -6,16 +6,20 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.example.android.bluetoothlegatt.R;
 
 public class MainActivity extends Activity {
 
     Button vortexPairBtn, fmgConnectBtn;
+    Switch activateBtn;
     public static BluetoothSocket btSocket = null;
     private String SPPaddress = null;
-
+    private static boolean activated = false;
     public static String TARGET_ACTIVITY = "target_activity";
 
 
@@ -41,6 +45,19 @@ public class MainActivity extends Activity {
             public void onClick(View v)
             {
                 onClickStartSPPScan(v);      //method to turn on
+            }
+        });
+        activateBtn = (Switch)findViewById(R.id.switch1);
+        activateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    activated = true;// The toggle is enabled
+                    //msg("activated");
+                } else {
+                    activated = false;// The toggle is disabled
+                    //msg("deactivated");
+                }
             }
         });
 
@@ -74,6 +91,14 @@ public class MainActivity extends Activity {
                 msg("SPP failed");
             }
             //ActiviyFinishedNowDoSomethingAmazing();
+        }
+
+    }
+
+    protected void onRestart(){
+        super.onRestart();
+        if(activated){
+            msg("back to main!");
         }
 
     }

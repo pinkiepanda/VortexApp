@@ -5,29 +5,29 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="12503134290543"
+    timestamp="15896589188453"
     token="2484390341036615122"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="213" />
+        duration="134" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="195" />
+        duration="140" />
     <task
         name="verifier"
-        duration="78" />
+        duration="57" />
 
     <artifact
         location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\outputs\apk\Application-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="12503134290543"
+        timestamp="15896589188453"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\outputs\apk\Application-debug.apk"

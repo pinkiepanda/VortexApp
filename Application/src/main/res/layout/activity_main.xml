@@ -15,21 +15,29 @@
         android:text="Vortex Pair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="119dp"
-        android:layout_marginTop="15dp"
         android:id="@+id/vortexPairBtn"
-        style="@style/Widget.AppCompat.Button" />
+        style="@style/Widget.AppCompat.Button"
+        android:layout_above="@+id/fmgConnectBtn"
+        android:layout_alignStart="@+id/fmgConnectBtn"
+        android:layout_alignEnd="@+id/fmgConnectBtn" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="31dp"
+        android:id="@+id/switch1"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="FMG Connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/vortexPairBtn"
-        android:layout_alignEnd="@+id/vortexPairBtn"
-        android:layout_marginTop="43dp"
         android:id="@+id/fmgConnectBtn"
-        style="@style/Widget.AppCompat.Button" />
+        style="@style/Widget.AppCompat.Button"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/switch1" />
 
 </RelativeLayout>

@@ -38,6 +38,7 @@ import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -150,14 +151,27 @@ public class DeviceScanActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
         if (device == null) return;
-        final Intent intent = new Intent(this, DeviceControlActivity.class);
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
-        if (mScanning) {
-            mBluetoothAdapter.stopLeScan(mLeScanCallback);
-            mScanning = false;
+
+        String devicename = null;
+        devicename = device.getName();
+        if(devicename == null)
+            devicename = "notvortex";
+
+        if (devicename.equalsIgnoreCase("Vortex")){
+            final Intent intent = new Intent(this, DeviceControlActivity.class);
+            intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
+            intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+            if (mScanning) {
+                mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                mScanning = false;
+            }
+            startActivity(intent);
         }
-        startActivity(intent);
+        else if (!devicename.equalsIgnoreCase("Vortex"))
+        {
+            msg("Device is not Vortex!");
+            return;
+        }
     }
 
     private void scanLeDevice(final boolean enable) {
@@ -266,5 +280,11 @@ public class DeviceScanActivity extends ListActivity {
     static class ViewHolder {
         TextView deviceName;
         TextView deviceAddress;
+    }
+
+    // fast way to call Toast
+    private void msg(String s)
+    {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 }

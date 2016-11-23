@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="7380665e2c6df7b0faec98e37cd63b406e77806b">
+        sha1="953c296c77d122924fd6aeb8e40fb02525e1ff26">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\instant-run-bootstrap_69b16bfa3bc00a818fef0f3676a891753b624aa0.jar" />
     </item>
     <item
@@ -178,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="585a31a28bb27e3f6017072f23484a8328644a14">
+        sha1="df589edc3e34648323aa94f1cdd98c2f50c6f725">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\instant-run_7c672531cdf23a187c841e8b17589de72499237c.jar" />
     </item>
     <item

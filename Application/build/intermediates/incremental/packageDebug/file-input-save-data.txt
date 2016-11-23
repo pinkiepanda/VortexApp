@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Nov 23 13:04:01 PST 2016
+#Wed Nov 23 14:00:33 PST 2016
 175.set=ANDROID_RESOURCE
 122.file=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abc_text_cursor_material.xml
 60.set=ANDROID_RESOURCE
