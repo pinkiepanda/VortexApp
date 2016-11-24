@@ -5,7 +5,7 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="67639458087542"
+    timestamp="68593561934687"
     token="2484390341036615122"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -17,11 +17,20 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="9" />
+        duration="39" />
     <task
         name="verifier"
-        duration="1" />
+        duration="9" />
 
+    <artifact
+        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
     <artifact
         location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
         type="DEX" />
@@ -34,8 +43,17 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="67639458087542"
+        timestamp="68593561934687"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
+        <artifact
+            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
         <artifact
             location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
             type="DEX" />

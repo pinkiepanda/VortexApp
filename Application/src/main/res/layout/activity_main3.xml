@@ -66,12 +66,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/commandText"
-        android:layout_weight="1"
         android:layout_alignBottom="@+id/backbutton"
         android:layout_marginBottom="70dp"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <Button
+        android:text="BRAKE"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:id="@+id/stopButton"
+        android:layout_below="@+id/backbutton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="30dp"
+        style="@android:style/Widget.Button.Inset"
+        android:background="@android:color/holo_red_dark" />
 
     <LinearLayout
         android:orientation="horizontal"

@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
     private boolean aButtonAlreadyPressed = false;
 
     Button vortexPairBtn, fmgConnectBtn;
-    Button forwBtn, backBtn, leftBtn, rightBtn;
+    Button forwBtn, backBtn, leftBtn, rightBtn, stopBtn;
     Switch activateBtn;
     TextView commandText;
     public static BluetoothSocket btSocket = null;
@@ -88,7 +88,15 @@ public class MainActivity extends Activity {
         backBtn = (Button)findViewById(R.id.backbutton);
         rightBtn = (Button)findViewById(R.id.rightbutton);
         leftBtn = (Button)findViewById(R.id.leftbutton);
+        stopBtn = (Button)findViewById(R.id.stopButton);
 
+        stopBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                resetAll();
+            }
+        });
         forwBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

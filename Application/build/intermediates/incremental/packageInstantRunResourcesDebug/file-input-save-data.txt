@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 24 12:57:04 PST 2016
+#Thu Nov 24 13:31:43 PST 2016
 175.set=ANDROID_RESOURCE
 122.file=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abc_search_url_text.xml
 60.set=ANDROID_RESOURCE
