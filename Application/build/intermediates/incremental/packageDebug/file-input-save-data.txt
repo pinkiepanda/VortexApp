@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 24 12:57:18 PST 2016
+#Thu Nov 24 15:00:48 PST 2016
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\arrowright.png

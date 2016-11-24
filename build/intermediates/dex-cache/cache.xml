@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="26f918f0beba63fd50678149f776c26f220c574d">
+        sha1="db3a6389dff1397b70cecaab914828e4acd2ed3c">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_69b16bfa3bc00a818fef0f3676a891753b624aa0\classes.dex" />
     </item>
     <item
@@ -169,7 +169,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="688af66ab396f00cc9ef000a46ddad2239af6605">
+        sha1="0f2ff3bd19ed12ef0b4e578d47cfa2331eda5b7f">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c672531cdf23a187c841e8b17589de72499237c\classes.dex" />
     </item>
     <item

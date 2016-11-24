@@ -2,9 +2,13 @@ package com.example.android.vortexapp;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothSocket;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.IBinder;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +28,8 @@ import java.util.Collections;
 
 public class MainActivity extends Activity {
 
+    private final static String TAG = MainActivity.class.getSimpleName();
+
     public static final int STOP = 0, FORW = 1, BACK = 2, LEFT = 3, RIGHT = 4, UP = 10, DOWN = 11;
     private int prevCommand = STOP;
     private int[] keyStates = new int[]{0,0,0,0};
@@ -41,7 +47,7 @@ public class MainActivity extends Activity {
     private static boolean activated = false;
     public static String TARGET_ACTIVITY = "target_activity";
 
-    BluetoothLeService mBluetoothLeService;
+    private BluetoothLeService mBluetoothLeService;
     public connectionStateEnum mConnectionState;
     private static BluetoothGattCharacteristic mSCharacteristic;
 
@@ -177,6 +183,7 @@ public class MainActivity extends Activity {
                 BLEaddress = data.getStringExtra("BLEaddress");
                 BLEname = data.getStringExtra("BLEname");
                 msg("Device \"" + BLEname + "\" at: " + BLEaddress);
+                initializeBLE();
             }
             else{
                 msg("BLE failed");
@@ -248,10 +255,9 @@ public class MainActivity extends Activity {
     }
 
     public void serialSend(int command) {
-        /*if (this.mConnectionState == connectionStateEnum.isConnected && activated) {
+        if (this.mConnectionState == connectionStateEnum.isConnected && activated) {
             this.mBluetoothLeService.writeCustomCharacteristic(command);
-        }*/
-        if(activated){
+            //msg("Sent: " + command);
             if(command == 0)
                 commandText.setText("STOP");
             else if(command == 1)
@@ -263,7 +269,41 @@ public class MainActivity extends Activity {
             else if(command == 4)
                 commandText.setText("RIGHT");
         }
+        else{
+            msg("failed!");
+        }
     }
+
+    private void initializeBLE(){
+        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+    }
+
+    // Code to manage Service lifecycle.
+    private final ServiceConnection mServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder service) {
+            mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
+            if (!mBluetoothLeService.initialize()) {
+                Log.e(TAG, "Unable to initialize Bluetooth");
+                msg("Unable to initialize Bluetooth.");
+                finish();
+            }
+            // Automatically connects to the device upon successful start-up initialization.
+            //mBluetoothLeService.connect(BLEaddress);
+            final boolean result = mBluetoothLeService.connect(BLEaddress);
+            if (result == true)
+                mConnectionState = connectionStateEnum.isConnected;
+            else
+                mConnectionState = connectionStateEnum.isNull;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            mBluetoothLeService = null;
+        }
+    };
 
     public void onBackPressed(){
         resetAll();
@@ -273,8 +313,13 @@ public class MainActivity extends Activity {
     protected void onDestroy(){
         super.onDestroy();
         resetAll();
+
+        unbindService(mServiceConnection);
+        mBluetoothLeService = null;
+
         finish();
     }
+
 
     // fast way to call Toast
     private void msg(String s)

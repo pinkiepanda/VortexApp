@@ -5,7 +5,7 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="68593561934687"
+    timestamp="74736272855966"
     token="2484390341036615122"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -17,43 +17,25 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="39" />
+        duration="12" />
     <task
         name="verifier"
-        duration="9" />
+        duration="2" />
 
-    <artifact
-        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-        type="DEX" />
-    <artifact
-        location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
     <artifact
         location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="66505114634311"
+        timestamp="73923998415966"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\outputs\apk\Application-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="68593561934687"
+        timestamp="74736272855966"
         verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
-        <artifact
-            location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
         <artifact
             location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
             type="DEX" />
