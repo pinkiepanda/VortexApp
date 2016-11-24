@@ -2,5 +2,21 @@
     {
         "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
         "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrowdown.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\arrowdown.png"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrowleft.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\arrowleft.png"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrowright.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\arrowright.png"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrowup.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\arrowup.png"
     }
 ]

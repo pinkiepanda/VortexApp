@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,35 +10,100 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/background"
+
     tools:context="com.example.android.vortexapp.MainActivity">
 
     <Button
-        android:text="Vortex Pair"
-        android:layout_width="wrap_content"
+        android:text="FMG Train"
+        android:layout_height="wrap_content"
+        android:id="@+id/fmgTrainBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_alignBaseline="@+id/vortexPairBtn"
+        android:layout_alignBottom="@+id/vortexPairBtn"
+        android:layout_toStartOf="@+id/vortexPairBtn"
+        android:layout_width="190dp" />
+
+    <Button
+        android:text="Vortex Connect"
         android:layout_height="wrap_content"
         android:id="@+id/vortexPairBtn"
         style="@style/Widget.AppCompat.Button"
-        android:layout_above="@+id/fmgConnectBtn"
-        android:layout_alignStart="@+id/fmgConnectBtn"
-        android:layout_alignEnd="@+id/fmgConnectBtn" />
+        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="190dp" />
+
+    <Button
+        android:text="FMG Connect"
+        android:layout_height="wrap_content"
+        android:id="@+id/fmgConnectBtn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="190dp"
+        android:layout_alignBaseline="@+id/fmgTrainBtn"
+        android:layout_alignBottom="@+id/fmgTrainBtn"
+        android:layout_toStartOf="@+id/fmgTrainBtn" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/arrowup"
+        android:id="@+id/forwardbutton"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="false"
+        android:elevation="0dp"
+        android:cropToPadding="false"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/rightbutton" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/arrowleft"
+        android:id="@+id/leftbutton"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="false"
+        android:elevation="0dp"
+        android:cropToPadding="false"
+        android:layout_below="@+id/forwardbutton"
+        android:layout_toStartOf="@+id/forwardbutton" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/arrowright"
+        android:id="@+id/rightbutton"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="false"
+        android:elevation="0dp"
+        android:cropToPadding="false"
+        android:layout_below="@+id/forwardbutton"
+        android:layout_toEndOf="@+id/backbutton" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/arrowdown"
+        android:id="@+id/backbutton"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:elevation="0dp"
+        android:cropToPadding="false"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/leftbutton"
+        android:layout_centerHorizontal="true" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="31dp"
         android:id="@+id/switch1"
         android:switchTextAppearance="@style/TextAppearance.AppCompat"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="97dp"
+        android:layout_below="@+id/fmgTrainBtn"
+        android:layout_toEndOf="@+id/forwardbutton" />
 
-    <Button
-        android:text="FMG Connect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fmgConnectBtn"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/switch1" />
+
 
 </RelativeLayout>

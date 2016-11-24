@@ -26,8 +26,27 @@
                     "startLine": 3,
                     "startColumn": 4,
                     "startOffset": 99,
+                    "endColumn": 39,
+                    "endOffset": 134
+                },
+                "from": {
+                    "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\values-v21\\base-colors.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 691,
+                        "endColumn": 39,
+                        "endOffset": 726
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 139,
                     "endColumn": 90,
-                    "endOffset": 185
+                    "endOffset": 225
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -42,11 +61,11 @@
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 190,
+                    "startOffset": 230,
                     "endColumn": 102,
-                    "endOffset": 288
+                    "endOffset": 328
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -61,11 +80,11 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 293,
+                    "startOffset": 333,
                     "endColumn": 102,
-                    "endOffset": 391
+                    "endOffset": 431
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -80,11 +99,11 @@
             },
             {
                 "to": {
-                    "startLine": 6,
+                    "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 396,
+                    "startOffset": 436,
                     "endColumn": 104,
-                    "endOffset": 496
+                    "endOffset": 536
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -99,11 +118,11 @@
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 501,
+                    "startOffset": 541,
                     "endColumn": 106,
-                    "endOffset": 603
+                    "endOffset": 643
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -118,11 +137,11 @@
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 608,
+                    "startOffset": 648,
                     "endColumn": 108,
-                    "endOffset": 712
+                    "endOffset": 752
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -137,11 +156,11 @@
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 717,
+                    "startOffset": 757,
                     "endColumn": 108,
-                    "endOffset": 821
+                    "endOffset": 861
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -156,11 +175,11 @@
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 826,
+                    "startOffset": 866,
                     "endColumn": 108,
-                    "endOffset": 930
+                    "endOffset": 970
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -175,11 +194,11 @@
             },
             {
                 "to": {
-                    "startLine": 11,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 935,
+                    "startOffset": 975,
                     "endColumn": 108,
-                    "endOffset": 1039
+                    "endOffset": 1079
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -194,11 +213,11 @@
             },
             {
                 "to": {
-                    "startLine": 12,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1044,
+                    "startOffset": 1084,
                     "endColumn": 108,
-                    "endOffset": 1148
+                    "endOffset": 1188
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -213,11 +232,11 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1153,
+                    "startOffset": 1193,
                     "endColumn": 106,
-                    "endOffset": 1255
+                    "endOffset": 1295
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -232,11 +251,11 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 1260,
+                    "startOffset": 1300,
                     "endColumn": 102,
-                    "endOffset": 1358
+                    "endOffset": 1398
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -251,11 +270,11 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 1363,
+                    "startOffset": 1403,
                     "endColumn": 118,
-                    "endOffset": 1477
+                    "endOffset": 1517
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -270,12 +289,12 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1482,
-                    "endLine": 17,
+                    "startOffset": 1522,
+                    "endLine": 18,
                     "endColumn": 12,
-                    "endOffset": 1632
+                    "endOffset": 1672
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -291,12 +310,12 @@
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1637,
-                    "endLine": 19,
+                    "startOffset": 1677,
+                    "endLine": 20,
                     "endColumn": 12,
-                    "endOffset": 1787
+                    "endOffset": 1827
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -312,11 +331,11 @@
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 1792,
+                    "startOffset": 1832,
                     "endColumn": 104,
-                    "endOffset": 1892
+                    "endOffset": 1932
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -331,11 +350,11 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1897,
+                    "startOffset": 1937,
                     "endColumn": 120,
-                    "endOffset": 2013
+                    "endOffset": 2053
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -350,11 +369,11 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 2018,
+                    "startOffset": 2058,
                     "endColumn": 100,
-                    "endOffset": 2114
+                    "endOffset": 2154
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -369,12 +388,12 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 2119,
-                    "endLine": 24,
+                    "startOffset": 2159,
+                    "endLine": 25,
                     "endColumn": 12,
-                    "endOffset": 2261
+                    "endOffset": 2301
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -390,12 +409,12 @@
             },
             {
                 "to": {
-                    "startLine": 25,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 2266,
-                    "endLine": 26,
+                    "startOffset": 2306,
+                    "endLine": 27,
                     "endColumn": 12,
-                    "endOffset": 2402
+                    "endOffset": 2442
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -411,11 +430,11 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 2407,
+                    "startOffset": 2447,
                     "endColumn": 102,
-                    "endOffset": 2505
+                    "endOffset": 2545
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -430,11 +449,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 2510,
+                    "startOffset": 2550,
                     "endColumn": 118,
-                    "endOffset": 2624
+                    "endOffset": 2664
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -449,11 +468,11 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 2629,
+                    "startOffset": 2669,
                     "endColumn": 106,
-                    "endOffset": 2731
+                    "endOffset": 2771
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -468,11 +487,11 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 2736,
+                    "startOffset": 2776,
                     "endColumn": 102,
-                    "endOffset": 2834
+                    "endOffset": 2874
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -487,12 +506,12 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 2839,
-                    "endLine": 32,
+                    "startOffset": 2879,
+                    "endLine": 33,
                     "endColumn": 12,
-                    "endOffset": 2989
+                    "endOffset": 3029
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -508,12 +527,12 @@
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 2994,
-                    "endLine": 34,
+                    "startOffset": 3034,
+                    "endLine": 35,
                     "endColumn": 12,
-                    "endOffset": 3160
+                    "endOffset": 3200
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -529,12 +548,12 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 3165,
-                    "endLine": 36,
+                    "startOffset": 3205,
+                    "endLine": 37,
                     "endColumn": 12,
-                    "endOffset": 3309
+                    "endOffset": 3349
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -550,12 +569,12 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 3314,
-                    "endLine": 38,
+                    "startOffset": 3354,
+                    "endLine": 39,
                     "endColumn": 12,
-                    "endOffset": 3474
+                    "endOffset": 3514
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -571,12 +590,12 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 3479,
-                    "endLine": 40,
+                    "startOffset": 3519,
+                    "endLine": 41,
                     "endColumn": 12,
-                    "endOffset": 3631
+                    "endOffset": 3671
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -592,12 +611,12 @@
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 3636,
-                    "endLine": 42,
+                    "startOffset": 3676,
+                    "endLine": 43,
                     "endColumn": 12,
-                    "endOffset": 3782
+                    "endOffset": 3822
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -613,11 +632,11 @@
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 3787,
+                    "startOffset": 3827,
                     "endColumn": 118,
-                    "endOffset": 3901
+                    "endOffset": 3941
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -632,12 +651,12 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 3906,
-                    "endLine": 48,
+                    "startOffset": 3946,
+                    "endLine": 49,
                     "endColumn": 12,
-                    "endOffset": 4273
+                    "endOffset": 4313
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -653,12 +672,12 @@
             },
             {
                 "to": {
-                    "startLine": 49,
+                    "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 4278,
-                    "endLine": 50,
+                    "startOffset": 4318,
+                    "endLine": 51,
                     "endColumn": 12,
-                    "endOffset": 4422
+                    "endOffset": 4462
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -674,12 +693,12 @@
             },
             {
                 "to": {
-                    "startLine": 51,
+                    "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 4427,
-                    "endLine": 52,
+                    "startOffset": 4467,
+                    "endLine": 53,
                     "endColumn": 12,
-                    "endOffset": 4571
+                    "endOffset": 4611
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -695,11 +714,11 @@
             },
             {
                 "to": {
-                    "startLine": 53,
+                    "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 4576,
+                    "startOffset": 4616,
                     "endColumn": 111,
-                    "endOffset": 4683
+                    "endOffset": 4723
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -714,11 +733,11 @@
             },
             {
                 "to": {
-                    "startLine": 54,
+                    "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 4688,
+                    "startOffset": 4728,
                     "endColumn": 146,
-                    "endOffset": 4830
+                    "endOffset": 4870
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -733,12 +752,12 @@
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 4835,
-                    "endLine": 56,
+                    "startOffset": 4875,
+                    "endLine": 57,
                     "endColumn": 12,
-                    "endOffset": 4983
+                    "endOffset": 5023
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -754,12 +773,12 @@
             },
             {
                 "to": {
-                    "startLine": 57,
+                    "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 4988,
-                    "endLine": 58,
+                    "startOffset": 5028,
+                    "endLine": 59,
                     "endColumn": 12,
-                    "endOffset": 5130
+                    "endOffset": 5170
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -775,11 +794,11 @@
             },
             {
                 "to": {
-                    "startLine": 59,
+                    "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 5135,
+                    "startOffset": 5175,
                     "endColumn": 74,
-                    "endOffset": 5205
+                    "endOffset": 5245
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -794,11 +813,11 @@
             },
             {
                 "to": {
-                    "startLine": 60,
+                    "startLine": 61,
                     "startColumn": 4,
-                    "startOffset": 5210,
+                    "startOffset": 5250,
                     "endColumn": 88,
-                    "endOffset": 5294
+                    "endOffset": 5334
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -813,11 +832,11 @@
             },
             {
                 "to": {
-                    "startLine": 61,
+                    "startLine": 62,
                     "startColumn": 4,
-                    "startOffset": 5299,
+                    "startOffset": 5339,
                     "endColumn": 86,
-                    "endOffset": 5381
+                    "endOffset": 5421
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -832,11 +851,11 @@
             },
             {
                 "to": {
-                    "startLine": 62,
+                    "startLine": 63,
                     "startColumn": 4,
-                    "startOffset": 5386,
+                    "startOffset": 5426,
                     "endColumn": 100,
-                    "endOffset": 5482
+                    "endOffset": 5522
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -851,11 +870,11 @@
             },
             {
                 "to": {
-                    "startLine": 63,
+                    "startLine": 64,
                     "startColumn": 4,
-                    "startOffset": 5487,
+                    "startOffset": 5527,
                     "endColumn": 102,
-                    "endOffset": 5585
+                    "endOffset": 5625
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -870,12 +889,12 @@
             },
             {
                 "to": {
-                    "startLine": 64,
+                    "startLine": 65,
                     "startColumn": 4,
-                    "startOffset": 5590,
-                    "endLine": 107,
+                    "startOffset": 5630,
+                    "endLine": 108,
                     "endColumn": 12,
-                    "endOffset": 8653
+                    "endOffset": 8693
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -891,12 +910,12 @@
             },
             {
                 "to": {
-                    "startLine": 108,
+                    "startLine": 109,
                     "startColumn": 4,
-                    "startOffset": 8658,
-                    "endLine": 110,
+                    "startOffset": 8698,
+                    "endLine": 111,
                     "endColumn": 12,
-                    "endOffset": 8839
+                    "endOffset": 8879
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -912,12 +931,12 @@
             },
             {
                 "to": {
-                    "startLine": 111,
+                    "startLine": 112,
                     "startColumn": 4,
-                    "startOffset": 8844,
-                    "endLine": 154,
+                    "startOffset": 8884,
+                    "endLine": 155,
                     "endColumn": 12,
-                    "endOffset": 11919
+                    "endOffset": 11959
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -933,12 +952,12 @@
             },
             {
                 "to": {
-                    "startLine": 155,
+                    "startLine": 156,
                     "startColumn": 4,
-                    "startOffset": 11924,
-                    "endLine": 157,
+                    "startOffset": 11964,
+                    "endLine": 158,
                     "endColumn": 12,
-                    "endOffset": 12117
+                    "endOffset": 12157
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -954,12 +973,12 @@
             },
             {
                 "to": {
-                    "startLine": 158,
+                    "startLine": 159,
                     "startColumn": 4,
-                    "startOffset": 12122,
-                    "endLine": 160,
+                    "startOffset": 12162,
+                    "endLine": 161,
                     "endColumn": 12,
-                    "endOffset": 12317
+                    "endOffset": 12357
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -975,12 +994,12 @@
             },
             {
                 "to": {
-                    "startLine": 161,
+                    "startLine": 162,
                     "startColumn": 4,
-                    "startOffset": 12322,
-                    "endLine": 162,
+                    "startOffset": 12362,
+                    "endLine": 163,
                     "endColumn": 12,
-                    "endOffset": 12440
+                    "endOffset": 12480
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -996,12 +1015,12 @@
             },
             {
                 "to": {
-                    "startLine": 163,
+                    "startLine": 164,
                     "startColumn": 4,
-                    "startOffset": 12445,
-                    "endLine": 164,
+                    "startOffset": 12485,
+                    "endLine": 165,
                     "endColumn": 12,
-                    "endOffset": 12563
+                    "endOffset": 12603
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1017,12 +1036,12 @@
             },
             {
                 "to": {
-                    "startLine": 165,
+                    "startLine": 166,
                     "startColumn": 4,
-                    "startOffset": 12568,
-                    "endLine": 166,
+                    "startOffset": 12608,
+                    "endLine": 167,
                     "endColumn": 12,
-                    "endOffset": 12676
+                    "endOffset": 12716
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1038,12 +1057,12 @@
             },
             {
                 "to": {
-                    "startLine": 167,
+                    "startLine": 168,
                     "startColumn": 4,
-                    "startOffset": 12681,
-                    "endLine": 169,
+                    "startOffset": 12721,
+                    "endLine": 170,
                     "endColumn": 12,
-                    "endOffset": 12859
+                    "endOffset": 12899
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1059,12 +1078,12 @@
             },
             {
                 "to": {
-                    "startLine": 170,
+                    "startLine": 171,
                     "startColumn": 4,
-                    "startOffset": 12864,
-                    "endLine": 171,
+                    "startOffset": 12904,
+                    "endLine": 172,
                     "endColumn": 12,
-                    "endOffset": 12990
+                    "endOffset": 13030
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1080,12 +1099,12 @@
             },
             {
                 "to": {
-                    "startLine": 172,
+                    "startLine": 173,
                     "startColumn": 4,
-                    "startOffset": 12995,
-                    "endLine": 174,
+                    "startOffset": 13035,
+                    "endLine": 175,
                     "endColumn": 12,
-                    "endOffset": 13191
+                    "endOffset": 13231
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1101,11 +1120,11 @@
             },
             {
                 "to": {
-                    "startLine": 175,
+                    "startLine": 176,
                     "startColumn": 4,
-                    "startOffset": 13196,
+                    "startOffset": 13236,
                     "endColumn": 88,
-                    "endOffset": 13280
+                    "endOffset": 13320
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1120,11 +1139,11 @@
             },
             {
                 "to": {
-                    "startLine": 176,
+                    "startLine": 177,
                     "startColumn": 4,
-                    "startOffset": 13285,
+                    "startOffset": 13325,
                     "endColumn": 110,
-                    "endOffset": 13391
+                    "endOffset": 13431
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1139,12 +1158,12 @@
             },
             {
                 "to": {
-                    "startLine": 177,
+                    "startLine": 178,
                     "startColumn": 4,
-                    "startOffset": 13396,
-                    "endLine": 179,
+                    "startOffset": 13436,
+                    "endLine": 180,
                     "endColumn": 12,
-                    "endOffset": 13624
+                    "endOffset": 13664
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1160,11 +1179,11 @@
             },
             {
                 "to": {
-                    "startLine": 180,
+                    "startLine": 181,
                     "startColumn": 4,
-                    "startOffset": 13629,
+                    "startOffset": 13669,
                     "endColumn": 100,
-                    "endOffset": 13725
+                    "endOffset": 13765
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1179,11 +1198,11 @@
             },
             {
                 "to": {
-                    "startLine": 181,
+                    "startLine": 182,
                     "startColumn": 4,
-                    "startOffset": 13730,
+                    "startOffset": 13770,
                     "endColumn": 94,
-                    "endOffset": 13820
+                    "endOffset": 13860
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1198,11 +1217,11 @@
             },
             {
                 "to": {
-                    "startLine": 182,
+                    "startLine": 183,
                     "startColumn": 4,
-                    "startOffset": 13825,
+                    "startOffset": 13865,
                     "endColumn": 122,
-                    "endOffset": 13943
+                    "endOffset": 13983
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1217,11 +1236,11 @@
             },
             {
                 "to": {
-                    "startLine": 183,
+                    "startLine": 184,
                     "startColumn": 4,
-                    "startOffset": 13948,
+                    "startOffset": 13988,
                     "endColumn": 128,
-                    "endOffset": 14072
+                    "endOffset": 14112
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1236,11 +1255,11 @@
             },
             {
                 "to": {
-                    "startLine": 184,
+                    "startLine": 185,
                     "startColumn": 4,
-                    "startOffset": 14077,
+                    "startOffset": 14117,
                     "endColumn": 116,
-                    "endOffset": 14189
+                    "endOffset": 14229
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1255,12 +1274,12 @@
             },
             {
                 "to": {
-                    "startLine": 185,
+                    "startLine": 186,
                     "startColumn": 4,
-                    "startOffset": 14194,
-                    "endLine": 187,
+                    "startOffset": 14234,
+                    "endLine": 188,
                     "endColumn": 12,
-                    "endOffset": 14366
+                    "endOffset": 14406
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1276,11 +1295,11 @@
             },
             {
                 "to": {
-                    "startLine": 188,
+                    "startLine": 189,
                     "startColumn": 4,
-                    "startOffset": 14371,
+                    "startOffset": 14411,
                     "endColumn": 98,
-                    "endOffset": 14465
+                    "endOffset": 14505
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1295,12 +1314,12 @@
             },
             {
                 "to": {
-                    "startLine": 189,
+                    "startLine": 190,
                     "startColumn": 4,
-                    "startOffset": 14470,
-                    "endLine": 190,
+                    "startOffset": 14510,
+                    "endLine": 191,
                     "endColumn": 12,
-                    "endOffset": 14600
+                    "endOffset": 14640
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1316,12 +1335,12 @@
             },
             {
                 "to": {
-                    "startLine": 191,
+                    "startLine": 192,
                     "startColumn": 4,
-                    "startOffset": 14605,
-                    "endLine": 192,
+                    "startOffset": 14645,
+                    "endLine": 193,
                     "endColumn": 12,
-                    "endOffset": 14743
+                    "endOffset": 14783
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1337,12 +1356,12 @@
             },
             {
                 "to": {
-                    "startLine": 193,
+                    "startLine": 194,
                     "startColumn": 4,
-                    "startOffset": 14748,
-                    "endLine": 194,
+                    "startOffset": 14788,
+                    "endLine": 195,
                     "endColumn": 12,
-                    "endOffset": 14878
+                    "endOffset": 14918
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1358,12 +1377,12 @@
             },
             {
                 "to": {
-                    "startLine": 195,
+                    "startLine": 196,
                     "startColumn": 4,
-                    "startOffset": 14883,
-                    "endLine": 196,
+                    "startOffset": 14923,
+                    "endLine": 197,
                     "endColumn": 12,
-                    "endOffset": 14997
+                    "endOffset": 15037
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1379,12 +1398,12 @@
             },
             {
                 "to": {
-                    "startLine": 197,
+                    "startLine": 198,
                     "startColumn": 4,
-                    "startOffset": 15002,
-                    "endLine": 200,
+                    "startOffset": 15042,
+                    "endLine": 201,
                     "endColumn": 12,
-                    "endOffset": 15198
+                    "endOffset": 15238
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1400,12 +1419,12 @@
             },
             {
                 "to": {
-                    "startLine": 201,
+                    "startLine": 202,
                     "startColumn": 4,
-                    "startOffset": 15203,
-                    "endLine": 202,
+                    "startOffset": 15243,
+                    "endLine": 203,
                     "endColumn": 12,
-                    "endOffset": 15317
+                    "endOffset": 15357
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1421,11 +1440,11 @@
             },
             {
                 "to": {
-                    "startLine": 203,
+                    "startLine": 204,
                     "startColumn": 4,
-                    "startOffset": 15322,
+                    "startOffset": 15362,
                     "endColumn": 92,
-                    "endOffset": 15410
+                    "endOffset": 15450
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1440,11 +1459,11 @@
             },
             {
                 "to": {
-                    "startLine": 204,
+                    "startLine": 205,
                     "startColumn": 4,
-                    "startOffset": 15415,
+                    "startOffset": 15455,
                     "endColumn": 110,
-                    "endOffset": 15521
+                    "endOffset": 15561
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1459,11 +1478,11 @@
             },
             {
                 "to": {
-                    "startLine": 205,
+                    "startLine": 206,
                     "startColumn": 4,
-                    "startOffset": 15526,
+                    "startOffset": 15566,
                     "endColumn": 55,
-                    "endOffset": 15577
+                    "endOffset": 15617
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1478,12 +1497,12 @@
             },
             {
                 "to": {
-                    "startLine": 206,
+                    "startLine": 207,
                     "startColumn": 4,
-                    "startOffset": 15582,
-                    "endLine": 207,
+                    "startOffset": 15622,
+                    "endLine": 208,
                     "endColumn": 12,
-                    "endOffset": 15684
+                    "endOffset": 15724
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1499,12 +1518,12 @@
             },
             {
                 "to": {
-                    "startLine": 208,
+                    "startLine": 209,
                     "startColumn": 4,
-                    "startOffset": 15689,
-                    "endLine": 211,
+                    "startOffset": 15729,
+                    "endLine": 212,
                     "endColumn": 12,
-                    "endOffset": 15879
+                    "endOffset": 15919
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1520,12 +1539,12 @@
             },
             {
                 "to": {
-                    "startLine": 212,
+                    "startLine": 213,
                     "startColumn": 4,
-                    "startOffset": 15884,
-                    "endLine": 213,
+                    "startOffset": 15924,
+                    "endLine": 214,
                     "endColumn": 12,
-                    "endOffset": 15990
+                    "endOffset": 16030
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1541,12 +1560,12 @@
             },
             {
                 "to": {
-                    "startLine": 214,
+                    "startLine": 215,
                     "startColumn": 4,
-                    "startOffset": 15995,
-                    "endLine": 215,
+                    "startOffset": 16035,
+                    "endLine": 216,
                     "endColumn": 12,
-                    "endOffset": 16123
+                    "endOffset": 16163
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1562,11 +1581,11 @@
             },
             {
                 "to": {
-                    "startLine": 216,
+                    "startLine": 217,
                     "startColumn": 4,
-                    "startOffset": 16128,
+                    "startOffset": 16168,
                     "endColumn": 94,
-                    "endOffset": 16218
+                    "endOffset": 16258
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1581,11 +1600,11 @@
             },
             {
                 "to": {
-                    "startLine": 217,
+                    "startLine": 218,
                     "startColumn": 4,
-                    "startOffset": 16223,
+                    "startOffset": 16263,
                     "endColumn": 90,
-                    "endOffset": 16309
+                    "endOffset": 16349
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1600,11 +1619,11 @@
             },
             {
                 "to": {
-                    "startLine": 218,
+                    "startLine": 219,
                     "startColumn": 4,
-                    "startOffset": 16314,
+                    "startOffset": 16354,
                     "endColumn": 90,
-                    "endOffset": 16400
+                    "endOffset": 16440
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1619,11 +1638,11 @@
             },
             {
                 "to": {
-                    "startLine": 219,
+                    "startLine": 220,
                     "startColumn": 4,
-                    "startOffset": 16405,
+                    "startOffset": 16445,
                     "endColumn": 116,
-                    "endOffset": 16517
+                    "endOffset": 16557
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1638,12 +1657,12 @@
             },
             {
                 "to": {
-                    "startLine": 220,
+                    "startLine": 221,
                     "startColumn": 4,
-                    "startOffset": 16522,
-                    "endLine": 221,
+                    "startOffset": 16562,
+                    "endLine": 222,
                     "endColumn": 12,
-                    "endOffset": 16656
+                    "endOffset": 16696
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1659,12 +1678,12 @@
             },
             {
                 "to": {
-                    "startLine": 222,
+                    "startLine": 223,
                     "startColumn": 4,
-                    "startOffset": 16661,
-                    "endLine": 231,
+                    "startOffset": 16701,
+                    "endLine": 232,
                     "endColumn": 12,
-                    "endOffset": 17169
+                    "endOffset": 17209
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1680,12 +1699,12 @@
             },
             {
                 "to": {
-                    "startLine": 232,
+                    "startLine": 233,
                     "startColumn": 4,
-                    "startOffset": 17174,
-                    "endLine": 241,
+                    "startOffset": 17214,
+                    "endLine": 242,
                     "endColumn": 12,
-                    "endOffset": 17694
+                    "endOffset": 17734
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1701,12 +1720,12 @@
             },
             {
                 "to": {
-                    "startLine": 242,
+                    "startLine": 243,
                     "startColumn": 4,
-                    "startOffset": 17699,
-                    "endLine": 251,
+                    "startOffset": 17739,
+                    "endLine": 252,
                     "endColumn": 12,
-                    "endOffset": 18374
+                    "endOffset": 18414
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1722,11 +1741,11 @@
             },
             {
                 "to": {
-                    "startLine": 252,
+                    "startLine": 253,
                     "startColumn": 4,
-                    "startOffset": 18379,
+                    "startOffset": 18419,
                     "endColumn": 56,
-                    "endOffset": 18431
+                    "endOffset": 18471
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1741,11 +1760,11 @@
             },
             {
                 "to": {
-                    "startLine": 253,
+                    "startLine": 254,
                     "startColumn": 4,
-                    "startOffset": 18436,
+                    "startOffset": 18476,
                     "endColumn": 57,
-                    "endOffset": 18489
+                    "endOffset": 18529
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-v21\\values-v21.xml",
@@ -1760,12 +1779,12 @@
             },
             {
                 "to": {
-                    "startLine": 254,
+                    "startLine": 255,
                     "startColumn": 4,
-                    "startOffset": 18494,
-                    "endLine": 255,
+                    "startOffset": 18534,
+                    "endLine": 256,
                     "endColumn": 12,
-                    "endOffset": 18570
+                    "endOffset": 18610
                 },
                 "from": {
                     "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",

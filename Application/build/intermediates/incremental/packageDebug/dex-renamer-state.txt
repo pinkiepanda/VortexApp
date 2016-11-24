@@ -1,4 +1,7 @@
-#Wed Nov 23 14:14:42 PST 2016
-base.0=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Thu Nov 24 12:57:18 PST 2016
+base.0=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7c672531cdf23a187c841e8b17589de72499237c
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.1=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_69b16bfa3bc00a818fef0f3676a891753b624aa0\\classes.dex
+base.1=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_69b16bfa3bc00a818fef0f3676a891753b624aa0
+file.0=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7c672531cdf23a187c841e8b17589de72499237c\\classes.dex
