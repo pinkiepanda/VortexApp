@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\menrvaicon1.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-hdpi\\menrvaicon1.png"
+    },
+    {
         "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
         "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },

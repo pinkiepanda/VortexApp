@@ -16,6 +16,10 @@
         "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-mdpi\\arrowleft.png"
     },
     {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\menrvaicon1.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-mdpi\\menrvaicon1.png"
+    },
+    {
         "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\arrowright.png",
         "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-mdpi\\arrowright.png"
     }

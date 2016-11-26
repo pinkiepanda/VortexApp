@@ -36,7 +36,7 @@ public class DeviceListSPP extends Activity
     //Bluetooth
     private BluetoothAdapter myBluetooth = null;
     private Set<BluetoothDevice> pairedDevices;
-    public static String EXTRA_ADDRESS = "device_address";
+    //public static String EXTRA_ADDRESS = "device_address";
     String TargetActivity = null;
 
     private ProgressDialog progress;
@@ -116,14 +116,14 @@ public class DeviceListSPP extends Activity
             String info = ((TextView) v).getText().toString();
             address = info.substring(info.length() - 17);
 
-            new ConnectSPP().execute(); //Call the class to connect
+            //new ConnectSPP().execute(); //Call the class to connect
 
-            /*Toast.makeText(getApplicationContext(), TargetActivity, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), TargetActivity, Toast.LENGTH_LONG).show();
 
             Intent i = new Intent(DeviceListSPP.this, TrainActivity.class);
             //Change the activity.
-            i.putExtra(EXTRA_ADDRESS, address); //this will be received at TrainActivity (class) Activity
-            startActivity(i);*/
+            i.putExtra(MainActivity.EXTRA_ADDRESS, address); //this will be received at TrainActivity (class) Activity
+            startActivity(i);
 
         }
     };
@@ -152,7 +152,7 @@ public class DeviceListSPP extends Activity
         return super.onOptionsItemSelected(item);
     }
 
-    private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI thread
+    private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI dataCollectorThread
     {
         private boolean ConnectSuccess = true; //if it's here, it's almost connected
 

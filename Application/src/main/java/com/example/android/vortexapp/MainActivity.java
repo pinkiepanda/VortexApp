@@ -2,18 +2,12 @@ package com.example.android.vortexapp;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothSocket;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.IBinder;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,22 +15,17 @@ import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.R;
 
-import org.w3c.dom.Text;
-
-import java.util.Arrays;
-import java.util.Collections;
-
 public class MainActivity extends Activity {
 
-    private final static String TAG = MainActivity.class.getSimpleName();
+    /*private final static String TAG = MainActivity.class.getSimpleName();
 
     public static final int STOP = 0, FORW = 1, BACK = 2, LEFT = 3, RIGHT = 4, UP = 10, DOWN = 11;
     private int prevCommand = STOP;
     private int[] keyStates = new int[]{0,0,0,0};
     private int alreadyPressedButton = STOP;
-    private boolean aButtonAlreadyPressed = false;
+    private boolean aButtonAlreadyPressed = false;*/
 
-    Button vortexPairBtn, fmgConnectBtn;
+    Button vortexPairBtn, fmgConnectBtn, trainBtn;
     Button forwBtn, backBtn, leftBtn, rightBtn, stopBtn;
     Switch activateBtn;
     TextView commandText;
@@ -46,10 +35,11 @@ public class MainActivity extends Activity {
     private String BLEname = null;
     private static boolean activated = false;
     public static String TARGET_ACTIVITY = "target_activity";
+    public static String EXTRA_ADDRESS = "device_address";
 
-    private BluetoothLeService mBluetoothLeService;
-    public connectionStateEnum mConnectionState;
-    private static BluetoothGattCharacteristic mSCharacteristic;
+    //private BluetoothLeService mBluetoothLeService;
+    //public connectionStateEnum mConnectionState;
+    //private static BluetoothGattCharacteristic mSCharacteristic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +53,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                onClickStartbLEScan(v);      //method to turn on
+                onClickStartBLEScan(v);      //method to turn on
             }
         });
         fmgConnectBtn = (Button)findViewById(R.id.fmgConnectBtn);
@@ -75,6 +65,14 @@ public class MainActivity extends Activity {
                 onClickStartSPPScan(v);      //method to turn on
             }
         });
+        trainBtn = (Button)findViewById(R.id.fmgTrainBtn);
+        trainBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                goToTrain(v);      //method to turn on
+            }
+        });
         activateBtn = (Switch)findViewById(R.id.switch1);
         activateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -83,14 +81,14 @@ public class MainActivity extends Activity {
                     activated = true;// The toggle is enabled
                     //msg("activated");
                 } else {
-                    serialSend(STOP);
+                    //serialSend(STOP);
                     activated = false;// The toggle is disabled
                     //msg("deactivated");
                 }
             }
         });
 
-        forwBtn = (Button)findViewById(R.id.forwardbutton);
+        /*forwBtn = (Button)findViewById(R.id.forwardbutton);
         backBtn = (Button)findViewById(R.id.backbutton);
         rightBtn = (Button)findViewById(R.id.rightbutton);
         leftBtn = (Button)findViewById(R.id.leftbutton);
@@ -156,20 +154,27 @@ public class MainActivity extends Activity {
                 moveWithLogic();
                 return true;
             }
-        });
+        });*/
 
     }
 
-    public void onClickStartbLEScan(View view)
+    public void onClickStartBLEScan(View view)
     {
-        resetAll();
+        //resetAll();
         startActivityForResult(new Intent(this, DeviceScanActivity.class), 1);
     }
 
     public void onClickStartSPPScan(View view)
     {
-        resetAll();
+        //resetAll();
         startActivityForResult(new Intent(this, DeviceListSPP.class), 2);
+    }
+
+    public void goToTrain(View view){
+        Intent i = new Intent(MainActivity.this, TrainActivity.class);
+        //Change the activity.
+        i.putExtra(EXTRA_ADDRESS, SPPaddress); //this will be received at TrainActivity (class) Activity
+        startActivityForResult(i, 3);
     }
 
     @Override
@@ -183,7 +188,7 @@ public class MainActivity extends Activity {
                 BLEaddress = data.getStringExtra("BLEaddress");
                 BLEname = data.getStringExtra("BLEname");
                 msg("Device \"" + BLEname + "\" at: " + BLEaddress);
-                initializeBLE();
+                //initializeBLE();
             }
             else{
                 msg("BLE failed");
@@ -211,7 +216,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void moveWithLogic(){
+    /*public void moveWithLogic(){
         int target = 1;
         int keysPressed = 0;// = Collections.frequency(Arrays.asList(keyStates),target);
         for(int i = 0; i <= 3; i++){
@@ -303,19 +308,19 @@ public class MainActivity extends Activity {
         public void onServiceDisconnected(ComponentName componentName) {
             mBluetoothLeService = null;
         }
-    };
+    };*/
 
     public void onBackPressed(){
-        resetAll();
+        //resetAll();
         finish();
     }
 
     protected void onDestroy(){
         super.onDestroy();
-        resetAll();
+        //resetAll();
 
-        unbindService(mServiceConnection);
-        mBluetoothLeService = null;
+        /*unbindService(mServiceConnection);
+        mBluetoothLeService = null;*/
 
         finish();
     }
@@ -327,26 +332,4 @@ public class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 
-    public enum connectionStateEnum {
-        isNull,
-        isScanning,
-        isToScan,
-        isConnecting,
-        isConnected,
-        isDisconnecting
-    }
-
-
-    /*private void openBLEScanActivity(View view){
-        Intent i = new Intent(MainActivity.this, DeviceScanActivity.class);
-        //Change the activity.
-
-        startActivity(i);
-    }
-
-    private void openSPPSCanActivity(View view){
-        Intent j = new Intent(MainActivity.this, DeviceListSPP.class);
-        //Change the activity.
-        startActivity(j);
-    }*/
 }

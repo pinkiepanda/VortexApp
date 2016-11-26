@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="movefunctionslist">
+        <item>Forward</item>
+        <item>Backward</item>
+        <item>Left</item>
+        <item>Right</item>
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -363,6 +369,7 @@
     <string name="menu_disconnect">Disconnect</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
+    <string name="movefunctionsprompt">Choose a move function</string>
     <string name="no_data">No data</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_led_control">ledControl</string>

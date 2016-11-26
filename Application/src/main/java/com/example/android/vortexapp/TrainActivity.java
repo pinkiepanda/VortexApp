@@ -2,6 +2,7 @@ package com.example.android.vortexapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,7 +10,6 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.ProgressDialog;
@@ -18,21 +18,30 @@ import android.bluetooth.BluetoothDevice;
 import android.os.AsyncTask;
 
 import com.example.android.bluetoothlegatt.R;
+import com.example.android.vortexapp.SVMClass;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.UUID;
 
 
 public class TrainActivity extends Activity {
 
     Button btnOn, btnOff, btnDis;
-    SeekBar brightness;
-    TextView lumn;
+    TextView lumn, textView4;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
+    BufferedReader mBufferedReader = null;
+    SVMClass svmclass = new SVMClass();
+
+    private int collectTime;
+    private boolean collectRun = false;
+
     //SPP UUID. Look for it
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
@@ -42,7 +51,7 @@ public class TrainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         Intent newint = getIntent();
-        address = newint.getStringExtra(DeviceListSPP.EXTRA_ADDRESS); //receive the address of the bluetooth device
+        address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
         //btSocket = MainActivity.btSocket;
 
@@ -53,8 +62,10 @@ public class TrainActivity extends Activity {
         btnOn = (Button)findViewById(R.id.button2);
         btnOff = (Button)findViewById(R.id.button3);
         btnDis = (Button)findViewById(R.id.button4);
-        brightness = (SeekBar)findViewById(R.id.seekBar);
         lumn = (TextView)findViewById(R.id.lumn);
+        textView4 = (TextView)findViewById(R.id.textView4);
+        textView4.setMovementMethod(new ScrollingMovementMethod());
+        textView4.setText(null);
 
         new ConnectSPP().execute(); //Call the class to connect
 
@@ -64,7 +75,12 @@ public class TrainActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                turnOnLed();      //method to turn on
+                textView4.setText(null);
+                collectTime = 3;
+                collectRun = true;
+                dataCollectorThread.start();
+                getDataSet();
+                //turnOnLed();      //method to turn on
             }
         });
 
@@ -84,34 +100,6 @@ public class TrainActivity extends Activity {
                 Disconnect(); //close connection
             }
         });
-
-        brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser)
-                {
-                    lumn.setText(String.valueOf(progress));
-                    try
-                    {
-                        btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
-                    }
-                    catch (IOException e)
-                    {
-
-                    }
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
     }
 
     private void Disconnect()
@@ -127,6 +115,66 @@ public class TrainActivity extends Activity {
         }
         finish(); //return to the first layout
 
+    }
+
+    public void onBackPressed(){
+        Disconnect();
+    }
+
+    private void getDataSet(){
+        while(collectRun){
+            readDataLine();
+        }
+    }
+
+    Thread dataCollectorThread = new Thread(new Runnable(){
+        @Override
+        public void run(){
+            //code to do the HTTP request
+            try {
+                Thread.sleep(collectTime*1000);
+            } catch (InterruptedException e) {
+                //e.printStackTrace();
+                msg("Timer messed up?");
+            }
+            collectRun = false;
+        }
+    });
+
+    private void readDataLine(){
+        boolean wrote, read;
+        String rawdataline;
+
+        wrote = true;
+        if (btSocket != null){
+            try{
+                btSocket.getOutputStream().write("d".getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error writing");
+                wrote = false;
+            }
+        }
+        read = true;
+        rawdataline = "null";
+        if(wrote){
+            try{
+                rawdataline = mBufferedReader.readLine();
+            }
+            catch (IOException e){
+                msg("Error reading");
+                read = false;
+            }
+        }
+        String existingText = textView4.getText().toString();
+        String fsrarray = svmclass.processData(rawdataline);
+        if(read){
+            textView4.setText(existingText + "\n" + fsrarray);
+        }
+        else{
+            textView4.setText(existingText + "\n" + "failed somewhere");
+        }
     }
 
     private void turnOffLed()
@@ -187,7 +235,7 @@ public class TrainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI thread
+    private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI dataCollectorThread
     {
         private boolean ConnectSuccess = true; //if it's here, it's almost connected
 
@@ -202,13 +250,19 @@ public class TrainActivity extends Activity {
         {
             try
             {
+                InputStream aStream = null;
+                InputStreamReader aReader = null;
                 if (btSocket == null || !isBtConnected)
                 {
-                 myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
-                 BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
-                 btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
-                 BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
-                 btSocket.connect();//start connection
+                    myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
+                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
+                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
+                    BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
+                    btSocket.connect();//start connection
+
+                    aStream = btSocket.getInputStream();
+                    aReader = new InputStreamReader(aStream);
+                    mBufferedReader = new BufferedReader(aReader);
                 }
             }
             catch (IOException e)

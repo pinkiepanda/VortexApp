@@ -40,4 +40,13 @@
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
 
+    <string name="movefunctionsprompt">Choose a move function</string>
+    <string-array name="movefunctionslist">
+        <item>Forward</item>
+        <item>Backward</item>
+        <item>Left</item>
+        <item>Right</item>
+    </string-array>
+
+
 </resources>

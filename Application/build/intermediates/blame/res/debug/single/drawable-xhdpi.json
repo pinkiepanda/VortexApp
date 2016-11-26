@@ -18,5 +18,9 @@
     {
         "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrowup.png",
         "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\arrowup.png"
+    },
+    {
+        "merged": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\menrvaicon1.png",
+        "source": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\src\\main\\res\\drawable-xhdpi\\menrvaicon1.png"
     }
 ]
