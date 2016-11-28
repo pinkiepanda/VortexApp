@@ -78,6 +78,19 @@ public class TrainActivity extends Activity {
                 textView4.setText(null);
                 collectTime = 3;
                 collectRun = true;
+                Thread dataCollectorThread = new Thread(new Runnable(){
+                    @Override
+                    public void run(){
+                        //code to do the HTTP request
+                        try {
+                            Thread.sleep(collectTime*1000);
+                        } catch (InterruptedException e) {
+                            //e.printStackTrace();
+                            msg("Timer messed up?");
+                        }
+                        collectRun = false;
+                    }
+                });
                 dataCollectorThread.start();
                 getDataSet();
                 //turnOnLed();      //method to turn on
@@ -127,19 +140,7 @@ public class TrainActivity extends Activity {
         }
     }
 
-    Thread dataCollectorThread = new Thread(new Runnable(){
-        @Override
-        public void run(){
-            //code to do the HTTP request
-            try {
-                Thread.sleep(collectTime*1000);
-            } catch (InterruptedException e) {
-                //e.printStackTrace();
-                msg("Timer messed up?");
-            }
-            collectRun = false;
-        }
-    });
+
 
     private void readDataLine(){
         boolean wrote, read;

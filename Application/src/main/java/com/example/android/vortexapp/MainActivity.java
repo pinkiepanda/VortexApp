@@ -37,10 +37,10 @@ public class MainActivity extends Activity {
     public static final String LOG_TAG = "AndroidLibSvm";
     public static String systemPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
     public static String appFolderPath = systemPath+"libsvm/";
-    public static String dataTrainPath = appFolderPath + "heart_scale ";
-    public static String dataPredictPath = appFolderPath + "heart_scale ";
-    public static String modelPath = appFolderPath + "model ";
-    public static String outputPath = appFolderPath + "predict ";
+    public static String dataTrainPath = appFolderPath + "trainingData";
+    public static String dataPredictPath = appFolderPath + "sensorData";
+    public static String modelPath = appFolderPath + "model";
+    public static String outputPath = appFolderPath + "predict";
 
     Button vortexPairBtn, fmgConnectBtn, trainBtn;
     Button forwBtn, backBtn, leftBtn, rightBtn, stopBtn;
