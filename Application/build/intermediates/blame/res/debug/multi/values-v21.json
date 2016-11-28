@@ -1797,6 +1797,27 @@
                         "endOffset": 753
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 257,
+                    "startColumn": 4,
+                    "startOffset": 18615,
+                    "endLine": 259,
+                    "endColumn": 12,
+                    "endOffset": 18804
+                },
+                "from": {
+                    "file": "D:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.1.1\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 244
+                    }
+                }
             }
         ]
     }

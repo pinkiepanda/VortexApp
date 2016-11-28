@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+
+    tools:context="com.example.android.vortexapp.MainActivity">
+
+    <Button
+        android:text="Forward"
+        android:layout_width="wrap_content"
+        android:id="@+id/forwardbutton"
+        android:layout_alignBottom="@+id/switch1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rightbutton"
+        android:layout_below="@+id/forwardbutton"
+        android:layout_toEndOf="@+id/forwardbutton"
+        android:layout_marginStart="10dp"
+        style="@style/Widget.AppCompat.Button" />
+
+    <Button
+        android:text="Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/leftbutton"
+        android:layout_below="@+id/forwardbutton"
+        android:layout_toStartOf="@+id/forwardbutton"
+        android:layout_marginEnd="10dp"
+        style="@style/Widget.AppCompat.Button" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backbutton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_below="@+id/rightbutton"
+        android:layout_alignStart="@+id/forwardbutton"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:text="STOP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/commandText"
+        android:layout_alignBottom="@+id/backbutton"
+        android:layout_marginBottom="70dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <Button
+        android:text="BRAKE"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:id="@+id/stopButton"
+        android:layout_below="@+id/backbutton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="30dp"
+        style="@android:style/Widget.Button.Inset"
+        android:background="@android:color/holo_red_dark" />
+
+
+</RelativeLayout>

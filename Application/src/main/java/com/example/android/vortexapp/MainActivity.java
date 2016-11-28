@@ -3,8 +3,11 @@ package com.example.android.vortexapp;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -15,6 +18,12 @@ import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.R;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 public class MainActivity extends Activity {
 
     /*private final static String TAG = MainActivity.class.getSimpleName();
@@ -24,6 +33,14 @@ public class MainActivity extends Activity {
     private int[] keyStates = new int[]{0,0,0,0};
     private int alreadyPressedButton = STOP;
     private boolean aButtonAlreadyPressed = false;*/
+
+    public static final String LOG_TAG = "AndroidLibSvm";
+    public static String systemPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    public static String appFolderPath = systemPath+"libsvm/";
+    public static String dataTrainPath = appFolderPath + "heart_scale ";
+    public static String dataPredictPath = appFolderPath + "heart_scale ";
+    public static String modelPath = appFolderPath + "model ";
+    public static String outputPath = appFolderPath + "predict ";
 
     Button vortexPairBtn, fmgConnectBtn, trainBtn;
     Button forwBtn, backBtn, leftBtn, rightBtn, stopBtn;
@@ -331,5 +348,72 @@ public class MainActivity extends Activity {
     {
         Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
+
+    /*
+        * Some utility functions
+        * */
+    private void CreateAppFolderIfNeed(){
+        // 1. create app folder if necessary
+        File folder = new File(appFolderPath);
+
+        if (!folder.exists()) {
+            folder.mkdir();
+            Log.d(LOG_TAG,"Appfolder is not existed, create one");
+        } else {
+            Log.w(LOG_TAG,"WARN: Appfolder has not been deleted");
+        }
+
+
+    }
+
+    private void copyAssetsDataIfNeed(){
+        String assetsToCopy[] = {"heart_scale_predict","heart_scale_train","heart_scale"};
+        //String targetPath[] = {C.systemPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigTrain+".wav", C.systemPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigPredict+".wav",C.systemPath+C.INPUT_FOLDER+"SomeoneLikeYouShort.mp3"};
+
+        for(int i=0; i<assetsToCopy.length; i++){
+            String from = assetsToCopy[i];
+            String to = appFolderPath+from;
+
+            // 1. check if file exist
+            File file = new File(to);
+            if(file.exists()){
+                Log.d(LOG_TAG, "copyAssetsDataIfNeed: file exist, no need to copy:"+from);
+            } else {
+                // do copy
+                boolean copyResult = copyAsset(getAssets(), from, to);
+                Log.d(LOG_TAG, "copyAssetsDataIfNeed: copy result = "+copyResult+" of file = "+from);
+            }
+        }
+    }
+
+    private boolean copyAsset(AssetManager assetManager, String fromAssetPath, String toPath) {
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = assetManager.open(fromAssetPath);
+            new File(toPath).createNewFile();
+            out = new FileOutputStream(toPath);
+            copyFile(in, out);
+            in.close();
+            in = null;
+            out.flush();
+            out.close();
+            out = null;
+            return true;
+        } catch(Exception e) {
+            e.printStackTrace();
+            Log.e(LOG_TAG, "[ERROR]: copyAsset: unable to copy file = "+fromAssetPath);
+            return false;
+        }
+    }
+
+    private void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while((read = in.read(buffer)) != -1){
+            out.write(buffer, 0, read);
+        }
+    }
+
 
 }
