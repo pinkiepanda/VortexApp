@@ -3,6 +3,8 @@ manifest
 ADDED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml:16:1-76:12
 	package
 		ADDED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml:17:5-50
+		INJECTED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml
 	android:versionName
 		ADDED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml:19:5-30
 		INJECTED from D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\AndroidManifest.xml
