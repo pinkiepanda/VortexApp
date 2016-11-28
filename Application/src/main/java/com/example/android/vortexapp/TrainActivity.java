@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.ProgressDialog;
@@ -18,7 +20,6 @@ import android.bluetooth.BluetoothDevice;
 import android.os.AsyncTask;
 
 import com.example.android.bluetoothlegatt.R;
-import com.example.android.vortexapp.SVMClass;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +30,9 @@ import java.util.UUID;
 
 public class TrainActivity extends Activity {
 
-    Button btnOn, btnOff, btnDis;
-    TextView lumn, textView4;
+    Button btnTrain, btnFinish, btnCancel;
+    TextView dataView, infoView;
+    Spinner functionsList, timesList;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
@@ -39,7 +41,9 @@ public class TrainActivity extends Activity {
     BufferedReader mBufferedReader = null;
     SVMClass svmclass = new SVMClass();
 
-    private int collectTime;
+    //private boolean initialDisplay = true;
+    String selectedFunction = "0";
+    private int collectTime = 1;
     private boolean collectRun = false;
 
     //SPP UUID. Look for it
@@ -59,24 +63,26 @@ public class TrainActivity extends Activity {
         setContentView(R.layout.activity_train);
 
         //call the widgtes
-        btnOn = (Button)findViewById(R.id.button2);
-        btnOff = (Button)findViewById(R.id.button3);
-        btnDis = (Button)findViewById(R.id.button4);
-        lumn = (TextView)findViewById(R.id.lumn);
-        textView4 = (TextView)findViewById(R.id.textView4);
-        textView4.setMovementMethod(new ScrollingMovementMethod());
-        textView4.setText(null);
+        btnTrain = (Button)findViewById(R.id.buttonTrain);
+        btnFinish = (Button)findViewById(R.id.finishButton);
+        btnCancel = (Button)findViewById(R.id.cancelButton);
+        dataView = (TextView)findViewById(R.id.dataView);
+        dataView.setMovementMethod(new ScrollingMovementMethod());
+        dataView.setText(null);
+        infoView = (TextView)findViewById(R.id.infoView);
+        infoView.setText(null);
+        functionsList = (Spinner)findViewById(R.id.functionsList);
+        timesList = (Spinner)findViewById(R.id.timesList);
 
         new ConnectSPP().execute(); //Call the class to connect
 
         //commands to be sent to bluetooth
-        btnOn.setOnClickListener(new View.OnClickListener()
+        btnTrain.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                textView4.setText(null);
-                collectTime = 3;
+                dataView.setText(null);
                 collectRun = true;
                 Thread dataCollectorThread = new Thread(new Runnable(){
                     @Override
@@ -97,7 +103,7 @@ public class TrainActivity extends Activity {
             }
         });
 
-        btnOff.setOnClickListener(new View.OnClickListener() {
+        btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -105,12 +111,68 @@ public class TrainActivity extends Activity {
             }
         });
 
-        btnDis.setOnClickListener(new View.OnClickListener()
+        btnCancel.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 Disconnect(); //close connection
+            }
+        });
+
+        functionsList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String selected = functionsList.getSelectedItem().toString();
+                if (selected.contains("Stop")){
+                    selectedFunction = "0";
+                }
+                else if (selected.contains("Forw")){
+                    selectedFunction = "1";
+                }
+                else if (selected.contains("Back")){
+                    selectedFunction = "2";
+                }
+                else if (selected.contains("Left")){
+                    selectedFunction = "3";
+                }
+                else if (selected.contains("Right")){
+                    selectedFunction = "4";
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        timesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String selected = timesList.getSelectedItem().toString();
+                if (selected.contains("1")){
+                    doMath("1");
+                }
+                else if (selected.contains("2")){
+                    doMath("2");
+                }
+                else if (selected.contains("3")){
+                    doMath("3");
+                }
+                else if (selected.contains("4")){
+                    doMath("4");
+                }
+                else if (selected.contains("5")){
+                    doMath("5");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -168,13 +230,13 @@ public class TrainActivity extends Activity {
                 read = false;
             }
         }
-        String existingText = textView4.getText().toString();
+        String existingText = dataView.getText().toString();
         String fsrarray = svmclass.processData(rawdataline);
         if(read){
-            textView4.setText(existingText + "\n" + fsrarray);
+            dataView.setText(existingText + "\n" + selectedFunction + " " + fsrarray);
         }
         else{
-            textView4.setText(existingText + "\n" + "failed somewhere");
+            dataView.setText(existingText + "\n" + "failed somewhere");
         }
     }
 
@@ -206,6 +268,22 @@ public class TrainActivity extends Activity {
                 msg("Error");
             }
         }
+    }
+
+    private void doMath(String selected){
+        int sec = Integer.parseInt(selected);
+        collectTime = sec;
+        int avgDataPerSec = 9;
+        double dataPerRun = (double)sec*avgDataPerSec;
+
+        double minData = 50;
+        double idealData = 100;
+        int minTrain = (int)Math.floor(minData/dataPerRun);
+        int recTrain = (int)Math.floor(idealData/dataPerRun);
+
+        String userInfo = "Recommend training each position at least " + minTrain + " times, ideally " + recTrain + " times if possible.";
+        userInfo += "\nVary each gesture for better prediction.";
+        infoView.setText(userInfo);
     }
 
     // fast way to call Toast

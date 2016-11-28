@@ -12,28 +12,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Train FMG Band"
-        android:id="@+id/textView2"
+        android:id="@+id/titleView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
         style="@style/TextColor"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/functionsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/movefunctionslist"
         android:prompt="@string/movefunctionsprompt"
         android:background="@color/cardview_light_background" />
 
+    <TextView
+        android:text="Train Time Interval:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/trainTimeView"
+        style="@style/TextColor"
+        android:layout_marginTop="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <Spinner
+        android:id="@+id/timesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/timeslist"
+        android:prompt="@string/movefunctionsprompt"
+        android:background="@color/cardview_light_background" />
+
+    <TextView
+        android:text="Recommend training each position at least 3 times, ideally 5 times if possible."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        style="@style/TextColor"
+        android:id="@+id/infoView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ON"
-        android:id="@+id/button2"
+        android:text="T R A I N"
+        android:id="@+id/buttonTrain"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/titleView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/seekBar"
@@ -43,24 +70,25 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OFF"
-        android:id="@+id/button3"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/button2"
+        android:text="F I N I S H"
+        android:id="@+id/finishButton"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/buttonTrain"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2"
+        android:layout_alignRight="@+id/buttonTrain"
+        android:layout_alignEnd="@+id/buttonTrain"
         style="@style/TextColor"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Disconnect"
-        android:id="@+id/button4"
+        android:id="@+id/cancelButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
         style="@style/TextColor"/>
 
     <TextView
@@ -68,7 +96,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/lumn"
         android:layout_alignTop="@+id/textView3"
-        android:layout_toRightOf="@+id/button4"
+        android:layout_toRightOf="@+id/cancelButton"
         android:layout_marginLeft="6dp"
         android:layout_marginStart="6dp"
         android:layout_alignParentRight="true"
@@ -80,7 +108,7 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/textView4"
+        android:id="@+id/dataView"
         tools:text="temp"
         style="@style/TextColor"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
