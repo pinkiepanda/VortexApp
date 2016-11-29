@@ -1,7 +1,7 @@
 package com.example.android.vortexapp;
 
-import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -19,12 +19,14 @@ import android.widget.Toast;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 public class MainActivity extends Activity {
+    private static Context c;
 
     /*private final static String TAG = MainActivity.class.getSimpleName();
 
@@ -37,10 +39,10 @@ public class MainActivity extends Activity {
     public static final String LOG_TAG = "AndroidLibSvm";
     public static String systemPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
     public static String appFolderPath = systemPath+"libsvm/";
-    public static String dataTrainPath = appFolderPath + "trainingData";
-    public static String dataPredictPath = appFolderPath + "sensorData";
-    public static String modelPath = appFolderPath + "model";
-    public static String outputPath = appFolderPath + "predict";
+    public static String dataTrainPath = "libsvm_trainingData";
+    public static String dataPredictPath = "libsvm_sensorData";
+    public static String modelPath = "libsvm_model";
+    public static String outputPath = "libsvm_predict";
 
     Button vortexPairBtn, fmgConnectBtn, trainBtn;
     Button forwBtn, backBtn, leftBtn, rightBtn, stopBtn;
@@ -58,10 +60,32 @@ public class MainActivity extends Activity {
     //public connectionStateEnum mConnectionState;
     //private static BluetoothGattCharacteristic mSCharacteristic;
 
+    public static Context getAppContext() {
+        return c;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        this.c = getApplicationContext();
+
+        //create necessary folder to save model files
+        CreateAppFolderIfNeed();
+        copyAssetsDataIfNeed();
+
+        /*try {
+            File tempPath = getAppContext().getFilesDir();
+            File tempFile = new File(tempPath,dataTrainPath+".txt");
+            FileOutputStream stream = new FileOutputStream(tempFile);
+            stream.write("testing".getBytes());
+            stream.close();
+        }catch(FileNotFoundException fnfe){
+            msg("failed file");
+        }catch(IOException e){
+            msg("failed write");
+        }*/
+
 
         commandText = (TextView)findViewById(R.id.commandText);
         vortexPairBtn = (Button)findViewById(R.id.vortexPairBtn);
@@ -342,7 +366,7 @@ public class MainActivity extends Activity {
         finish();
     }
 
-
+    // ----- from AndroidLibSVM by yctung (jnilibsvm library source) ------
     // fast way to call Toast
     private void msg(String s)
     {

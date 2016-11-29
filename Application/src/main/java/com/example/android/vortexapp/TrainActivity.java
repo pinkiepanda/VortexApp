@@ -22,6 +22,10 @@ import android.os.AsyncTask;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -73,6 +77,21 @@ public class TrainActivity extends Activity {
         infoView.setText(null);
         functionsList = (Spinner)findViewById(R.id.functionsList);
         timesList = (Spinner)findViewById(R.id.timesList);
+
+        /*String text = "Didn't work";
+        try{
+            File tempPath = MainActivity.getAppContext().getFilesDir();
+            File tempFile = new File(tempPath,MainActivity.dataTrainPath+".txt");
+            int length = (int) tempFile.length();
+            byte[] bytes = new byte[length];
+            FileInputStream in = new FileInputStream(tempFile);
+            in.read(bytes);
+            in.close();
+            text = new String(bytes);
+        }catch(IOException e){
+            msg("failed read");
+        }
+        dataView.setText(text);*/
 
         new ConnectSPP().execute(); //Call the class to connect
 
@@ -201,7 +220,6 @@ public class TrainActivity extends Activity {
             readDataLine();
         }
     }
-
 
 
     private void readDataLine(){
