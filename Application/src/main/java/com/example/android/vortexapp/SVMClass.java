@@ -193,12 +193,23 @@ public class SVMClass{
             //svm_problem problem = loadSVMProblem();
             //svm_model model = svm.svm_train(problem,param);
             //svm.svm_save_model(fullmodelPath + ".txt",model);
-
+            String svmTrainOptions = "-t 2";
+            jniSvmTrain(svmTrainOptions+" "+fulldataTrainPath+".txt "+fullmodelPath+".txt");
         }catch(Exception e){
             worked = false;
         }
         return worked;
 
+    }
+
+    public boolean predict(){
+        boolean worked = true;
+        try{
+            jniSvmPredict(fulldataPredictPath+".txt "+fullmodelPath+".txt "+fulloutputPath+".txt");
+        }catch (Exception e){
+            worked = false;
+        }
+        return worked;
     }
 
 }

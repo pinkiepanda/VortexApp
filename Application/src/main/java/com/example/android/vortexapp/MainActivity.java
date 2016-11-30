@@ -236,8 +236,9 @@ public class MainActivity extends Activity {
             i.putExtra(EXTRA_ADDRESS, SPPaddress); //this will be received at TrainActivity (class) Activity
             startActivity(i);
         }*/
-        Intent i = new Intent(MainActivity.this,SVMActivity.class);
-        startActivity(i);
+        //Intent i = new Intent(MainActivity.this,MonitorActivity.class);
+        //startActivity(i);
+        startActivityForResult(new Intent(this, DeviceListSPP.class), 4);
     }
 
     @Override
@@ -262,7 +263,7 @@ public class MainActivity extends Activity {
             if(resultCode == RESULT_OK){
                 SPPaddress = data.getStringExtra("SPPaddress");
                 msg("SPP address is: " + SPPaddress);
-                Intent i = new Intent(MainActivity.this, MonitorActivity.class);
+                Intent i = new Intent(MainActivity.this, TrainActivity.class);
                 i.putExtra(EXTRA_ADDRESS, SPPaddress);
                 startActivityForResult(i, 3);
             }
@@ -278,6 +279,18 @@ public class MainActivity extends Activity {
             }
             else{
                 //msg("Train failed.");
+            }
+        }
+        else if (requestCode == 4){
+            if(resultCode == RESULT_OK){
+                SPPaddress = data.getStringExtra("SPPaddress");
+                msg("SPP address is: " + SPPaddress);
+                Intent i = new Intent(MainActivity.this, MonitorActivity.class);
+                i.putExtra(EXTRA_ADDRESS, SPPaddress);
+                startActivity(i);
+            }
+            else{
+                msg("SPP failed");
             }
         }
 

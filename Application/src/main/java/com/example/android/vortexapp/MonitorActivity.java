@@ -19,6 +19,10 @@ import android.widget.Toast;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,22 +30,13 @@ import java.util.UUID;
 
 public class MonitorActivity extends Activity {
 
-    // link jni library
-    static {
-        System.loadLibrary("jnilibsvm");
-    }
-
-    // connect the native functions
-    private native void jniSvmTrain(String cmd);
-    private native void jniSvmPredict(String cmd);
-
     String systemPath;// = MainActivity.getAppContext().getFilesDir().getPath() + "/";
     String fulldataTrainPath;// = systemPath + MainActivity.dataTrainPath;
     String fulldataPredictPath;// = systemPath + MainActivity.dataPredictPath;
     String fullmodelPath;// = systemPath + MainActivity.modelPath;
     String fulloutputPath;// = systemPath + MainActivity.outputPath;
 
-    TextView dataViewLive;
+    TextView dataViewLive, predictView;
     RadioButton forwIndicator, backIndicator, leftIndicator, rightIndicator, stopIndicator;
     Switch activateSwitch;
 
@@ -89,6 +84,7 @@ public class MonitorActivity extends Activity {
         address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
         dataViewLive = (TextView)findViewById(R.id.dataViewLive);
+        predictView = (TextView)findViewById(R.id.predictView);
         //forwIndicator = (RadioButton)findViewById(R.id.forwIndicator);
         //backIndicator = (RadioButton)findViewById(R.id.backIndicator);
         //leftIndicator = (RadioButton)findViewById(R.id.leftIndicator);
@@ -132,35 +128,22 @@ public class MonitorActivity extends Activity {
 
         new ConnectSPP().execute(); //Call the class to connect
 
-        //systemPath = MainActivity.getAppContext().getFilesDir().getPath() + "/";
-        //fulldataTrainPath = systemPath + MainActivity.dataTrainPath;
-        //fulldataPredictPath = systemPath + MainActivity.dataPredictPath;
-        //fullmodelPath = systemPath + MainActivity.modelPath;
-        //fulloutputPath = systemPath + MainActivity.outputPath;
+        systemPath = MainActivity.getAppContext().getFilesDir().getPath() + "/";
+        fulldataTrainPath = systemPath + MainActivity.dataTrainPath;
+        fulldataPredictPath = systemPath + MainActivity.dataPredictPath;
+        fullmodelPath = systemPath + MainActivity.modelPath;
+        fulloutputPath = systemPath + MainActivity.outputPath;
 
         //boolean worked = trainProblem();
         //msg("Train has worked: " + worked);
 
     }
 
-
-
-    public boolean trainProblem(){
-        boolean worked = true;
-        try{
-            String svmTrainOptions = "-t 2";
-            //jniSvmTrain(svmTrainOptions+" "+fulldataTrainPath+".txt "+fullmodelPath+".txt");
-        }catch(Exception e){
-            worked = false;
-        }
-        return worked;
-    }
-
     private void readDataLine(){
-        boolean wrote, read;
+        boolean sent, read, wrote;
         String rawdataline;
 
-        wrote = true;
+        sent = true;
         if (btSocket != null){
             try{
                 btSocket.getOutputStream().write("d".getBytes());
@@ -168,12 +151,12 @@ public class MonitorActivity extends Activity {
             catch (IOException e)
             {
                 msg("Error writing");
-                wrote = false;
+                sent = false;
             }
         }
         read = true;
         rawdataline = "null";
-        if(wrote){
+        if(sent){
             try{
                 rawdataline = mBufferedReader.readLine();
             }
@@ -187,13 +170,80 @@ public class MonitorActivity extends Activity {
         }
         String existingText = dataViewLive.getText().toString();
         String fsrarray = svmclass.processData(rawdataline);
+        wrote = true;
         if(read){
             dataViewLive.setText(fsrarray);
             //totalData += selectedFunction + " " + fsrarray + "\n";
+
+            try {
+                File tempPath = MainActivity.getAppContext().getFilesDir();
+                File tempFile = new File(tempPath,MainActivity.dataPredictPath+".txt");
+                FileOutputStream stream = new FileOutputStream(tempFile);
+                stream.write(("0 "+ fsrarray).getBytes());
+                stream.close();
+                predictView.setText("wrote predict data successfully");
+            }catch(FileNotFoundException fnfe){
+                dataViewLive.setText("failed file");
+                wrote = false;
+            }catch(IOException e){
+                dataViewLive.setText("failed write");
+                wrote = false;
+            }
+
+            if(wrote){
+                boolean predicted = true;
+                try{
+                    svmclass.predict();
+                    //jniSvmPredict(fulldataPredictPath+".txt "+fullmodelPath+".txt "+fulloutputPath+".txt");
+                }catch (Exception e){
+                    predictView.setText("failed predict");
+                    predicted = false;
+                }
+                if(predicted){
+                    File tempPath = MainActivity.getAppContext().getFilesDir();
+                    File datafile = new File(tempPath,MainActivity.outputPath+".txt");
+                    if (datafile.exists())
+                    {
+                        BufferedReader br;
+                        String line;
+                        try{
+                            br = new BufferedReader(new FileReader(datafile));
+                            line = br.readLine();
+                            predictView.setText(line);
+                        }catch(FileNotFoundException fnfe){
+                            predictView.setText("failed file");
+                        }catch (IOException ioe){
+                            predictView.setText("failed read");
+                        }
+                    }
+                }
+            }
         }
         else{
-            dataViewLive.setText("failed somewhere");
+            dataViewLive.setText("did not read");
         }
+    }
+
+    public void onBackPressed(){
+        Disconnect();
+    }
+
+    private void Disconnect()
+    {
+        if (btSocket!=null) //If the btSocket is busy
+        {
+            try
+            {
+                btSocket.close(); //close connection
+            }
+            catch (IOException e)
+            { msg("Error");}
+        }
+
+        //mainActivity.setSPPaddress(address);
+        Intent data = new Intent();
+        setResult(RESULT_OK,data);
+        finish(); //return to the first layout
     }
 
     private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI dataCollectorThread
