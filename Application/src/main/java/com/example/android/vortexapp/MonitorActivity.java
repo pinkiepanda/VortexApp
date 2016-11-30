@@ -303,7 +303,7 @@ public class MonitorActivity extends Activity {
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(MonitorActivity.this, "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(MonitorActivity.this, "Connecting...", "please wait...");  //show a progress dialog
         }
 
         @Override
@@ -339,7 +339,7 @@ public class MonitorActivity extends Activity {
 
             if (!ConnectSuccess)
             {
-                msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
+                msg("Failed to connect, try again.\nSwitching the FMG band on and off may help.");
                 finish();
             }
             else
@@ -360,12 +360,6 @@ public class MonitorActivity extends Activity {
                             while(wait);
                             wait = true;
                             myHandler.sendEmptyMessage(DO_UPDATE_TEXT);
-                        /*try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            //e.printStackTrace();
-                            msg("Timer messed up?");
-                        }*/
                         }
                     }
                 }

@@ -82,7 +82,6 @@ public class DeviceListSPP extends Activity
             }
         });
         pairedDevicesList();
-        //btnPaired.setVisibility(View.GONE);
     }
 
     private void pairedDevicesList()
@@ -116,15 +115,6 @@ public class DeviceListSPP extends Activity
             String info = ((TextView) v).getText().toString();
             address = info.substring(info.length() - 17);
 
-            //new ConnectSPP().execute(); //Call the class to connect
-
-            //Toast.makeText(getApplicationContext(), TargetActivity, Toast.LENGTH_LONG).show();
-
-            //Intent i = new Intent(DeviceListSPP.this, TrainActivity.class);
-            //Change the activity.
-            //i.putExtra(MainActivity.EXTRA_ADDRESS, address); //this will be received at TrainActivity (class) Activity
-            //startActivity(i);
-            //startActivityForResult(new Intent(DeviceListSPP.this, TrainActivity.class), 3);
             Disconnect();
         }
     };
@@ -151,57 +141,6 @@ public class DeviceListSPP extends Activity
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private class ConnectSPP extends AsyncTask<Void, Void, Void>  // UI dataCollectorThread
-    {
-        private boolean ConnectSuccess = true; //if it's here, it's almost connected
-
-        @Override
-        protected void onPreExecute()
-        {
-            progress = ProgressDialog.show(DeviceListSPP.this, "Connecting...", "Please wait!!!");  //show a progress dialog
-        }
-
-        @Override
-        protected Void doInBackground(Void... devices) //while the progress dialog is shown, the connection is done in background
-        {
-            try
-            {
-                if (btSocket == null || !isBtConnected)
-                {
-                    myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
-                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
-                    BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
-                    btSocket.connect();//start connection
-                }
-            }
-            catch (IOException e)
-            {
-                ConnectSuccess = false;//if the try failed, you can check the exception here
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) //after the doInBackground, it checks if everything went fine
-        {
-            super.onPostExecute(result);
-
-            if (!ConnectSuccess)
-            {
-                msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
-                setResult(0);
-                finish();
-            }
-            else
-            {
-                msg("Connection success.");
-                isBtConnected = true;
-                Disconnect();
-            }
-            progress.dismiss();
-        }
     }
 
     private void Disconnect()

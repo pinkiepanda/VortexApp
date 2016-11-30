@@ -35,7 +35,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
-        android:name="com.example.android.vortexapp.GlobalVariables"
         android:icon="@drawable/menrvaicon1"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light">
@@ -66,7 +65,6 @@
             android:label="@string/app_name" />
         <activity android:name="com.example.android.vortexapp.MonitorActivity"
             android:label="@string/app_name"/>
-        <activity android:name="com.example.android.vortexapp.SVMActivity"></activity>
     </application>
 
 </manifest>

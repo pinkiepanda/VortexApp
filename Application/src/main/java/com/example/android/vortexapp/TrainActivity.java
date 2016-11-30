@@ -285,22 +285,14 @@ public class TrainActivity extends Activity {
             FileOutputStream stream = new FileOutputStream(tempFile);
             stream.write(totalData.getBytes());
             stream.close();
-            msg("wrote successful");
+            //msg("wrote successful");
         }catch(FileNotFoundException fnfe){
             msg("failed file");
         }catch(IOException e){
             msg("failed write");
         }
         boolean worked = svmclass.trainProblem();
-        msg("train worked: " + worked);
-        //Intent i = new Intent(TrainActivity.this,SVMActivity.class);
-        //startActivity(i);
-        /*if (worked){
-            Disconnect();
-        }
-        else{
-            msg("train failed poop");
-        }*/
+        msg("Train function worked: " + worked);
     }
 
     private void doMath(String selected){
@@ -354,7 +346,7 @@ public class TrainActivity extends Activity {
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(TrainActivity.this, "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(TrainActivity.this, "Connecting...", "please wait...");  //show a progress dialog
         }
 
         @Override
@@ -390,7 +382,7 @@ public class TrainActivity extends Activity {
 
             if (!ConnectSuccess)
             {
-                msg("Connection Failed. Is it a SPP Bluetooth? Try again.");
+                msg("Failed to connect, try again.\nSwitching the FMG band on and off may help.");
                 finish();
             }
             else

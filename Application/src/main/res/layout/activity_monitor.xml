@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/forwIndicator"
         android:layout_toEndOf="@+id/forwIndicator"
+        style="@style/TextColor"
         android:id="@+id/rightIndicator" />
 
     <RadioButton
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/backIndicator"
         android:layout_toStartOf="@+id/forwIndicator"
+        style="@style/TextColor"
         android:id="@+id/leftIndicator" />
 
     <RadioButton
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/backIndicator"
         android:layout_below="@+id/rightIndicator"
+        style="@style/TextColor"
         android:layout_centerHorizontal="true" />
 
     <RadioButton
@@ -43,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
         android:id="@+id/forwIndicator"
-        style="@android:style/Widget.CompoundButton.RadioButton"
+        style="@style/TextColor"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -53,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/backIndicator"
         android:layout_centerHorizontal="true"
+        style="@style/TextColor"
         android:id="@+id/stopIndicator" />
 
     <TextView
@@ -72,6 +76,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
+        style="@style/TextColor"
         android:id="@+id/switch2" />
 
     <TextView
