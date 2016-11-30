@@ -10,6 +10,8 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Switch;
@@ -39,6 +41,7 @@ public class MonitorActivity extends Activity {
     TextView dataViewLive, predictView;
     RadioButton forwIndicator, backIndicator, leftIndicator, rightIndicator, stopIndicator;
     Switch activateSwitch;
+    Button btnFinish;
 
     String address = null;
     private ProgressDialog progress;
@@ -50,6 +53,8 @@ public class MonitorActivity extends Activity {
 
     private boolean activated;
     private boolean wait;
+    private boolean predicted;
+    private int prediction;
 
     int i = 0;
     private final static int DO_UPDATE_TEXT = 1;
@@ -85,35 +90,33 @@ public class MonitorActivity extends Activity {
 
         dataViewLive = (TextView)findViewById(R.id.dataViewLive);
         predictView = (TextView)findViewById(R.id.predictView);
-        //forwIndicator = (RadioButton)findViewById(R.id.forwIndicator);
-        //backIndicator = (RadioButton)findViewById(R.id.backIndicator);
-        //leftIndicator = (RadioButton)findViewById(R.id.leftIndicator);
-        //rightIndicator = (RadioButton)findViewById(R.id.rightIndicator);
-        //stopIndicator = (RadioButton)findViewById(R.id.stopIndicator);
-
-        activated = false;
-
-        Thread dataCollectorThread = new Thread(new Runnable(){
+        forwIndicator = (RadioButton)findViewById(R.id.forwIndicator);
+        backIndicator = (RadioButton)findViewById(R.id.backIndicator);
+        leftIndicator = (RadioButton)findViewById(R.id.leftIndicator);
+        rightIndicator = (RadioButton)findViewById(R.id.rightIndicator);
+        stopIndicator = (RadioButton)findViewById(R.id.stopIndicator);
+        btnFinish = (Button)findViewById(R.id.monitorDisconnect);
+        btnFinish.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void run(){
-
-                while(true){
-                    while(activated){
-                        //readDataLine();
-                        while(wait);
-                        wait = true;
-                        myHandler.sendEmptyMessage(DO_UPDATE_TEXT);
-                        /*try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            //e.printStackTrace();
-                            msg("Timer messed up?");
-                        }*/
-                    }
+            public void onClick(View v)
+            {
+                if(activated){
+                    msg("Please turn off the switch first.");
+                }
+                else{
+                    Disconnect(); //close connection
                 }
             }
         });
-        dataCollectorThread.start();
+
+
+        forwIndicator.setChecked(false); 
+        backIndicator.setChecked(false);
+        leftIndicator.setChecked(false);
+        rightIndicator.setChecked(false);
+        stopIndicator.setChecked(true);
+
         activateSwitch = (Switch)findViewById(R.id.switch2);
         activateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
@@ -126,6 +129,11 @@ public class MonitorActivity extends Activity {
             }
         });
 
+        if(!svmclass.modelExists()){
+            msg("The program hasn't been trained with the FMG band!");
+            finish();
+        }
+
         new ConnectSPP().execute(); //Call the class to connect
 
         systemPath = MainActivity.getAppContext().getFilesDir().getPath() + "/";
@@ -133,6 +141,8 @@ public class MonitorActivity extends Activity {
         fulldataPredictPath = systemPath + MainActivity.dataPredictPath;
         fullmodelPath = systemPath + MainActivity.modelPath;
         fulloutputPath = systemPath + MainActivity.outputPath;
+
+
 
         //boolean worked = trainProblem();
         //msg("Train has worked: " + worked);
@@ -191,7 +201,7 @@ public class MonitorActivity extends Activity {
             }
 
             if(wrote){
-                boolean predicted = true;
+                predicted = true;
                 try{
                     svmclass.predict();
                     //jniSvmPredict(fulldataPredictPath+".txt "+fullmodelPath+".txt "+fulloutputPath+".txt");
@@ -202,14 +212,17 @@ public class MonitorActivity extends Activity {
                 if(predicted){
                     File tempPath = MainActivity.getAppContext().getFilesDir();
                     File datafile = new File(tempPath,MainActivity.outputPath+".txt");
-                    if (datafile.exists())
+                    if (datafile.exists() && svmclass.modelExists())
                     {
                         BufferedReader br;
                         String line;
                         try{
                             br = new BufferedReader(new FileReader(datafile));
                             line = br.readLine();
-                            predictView.setText(line);
+                            //predictView.setText(line);
+                            prediction = Integer.parseInt(line);
+                            predictView.setText("Prediction: "+prediction);
+                            signalDirection(prediction);
                         }catch(FileNotFoundException fnfe){
                             predictView.setText("failed file");
                         }catch (IOException ioe){
@@ -224,12 +237,49 @@ public class MonitorActivity extends Activity {
         }
     }
 
+    private void signalDirection(int command){
+        //if(predicted){
+        if(command == 0){
+            forwIndicator.setChecked(false);
+            backIndicator.setChecked(false);
+            leftIndicator.setChecked(false);
+            rightIndicator.setChecked(false);
+            stopIndicator.setChecked(true);
+        }else if (command == 1){
+            forwIndicator.setChecked(true);
+            backIndicator.setChecked(false);
+            leftIndicator.setChecked(false);
+            rightIndicator.setChecked(false);
+            stopIndicator.setChecked(false);
+        }else if (command == 2){
+            forwIndicator.setChecked(false);
+            backIndicator.setChecked(true);
+            leftIndicator.setChecked(false);
+            rightIndicator.setChecked(false);
+            stopIndicator.setChecked(false);
+        }else if (command == 3){
+            forwIndicator.setChecked(false);
+            backIndicator.setChecked(false);
+            leftIndicator.setChecked(true);
+            rightIndicator.setChecked(false);
+            stopIndicator.setChecked(false);
+        }else if (command == 4){
+            forwIndicator.setChecked(false);
+            backIndicator.setChecked(false);
+            leftIndicator.setChecked(false);
+            rightIndicator.setChecked(true);
+            stopIndicator.setChecked(false);
+        }
+    }
+
     public void onBackPressed(){
         Disconnect();
     }
 
     private void Disconnect()
     {
+        activated = false;
+
         if (btSocket!=null) //If the btSocket is busy
         {
             try
@@ -241,8 +291,8 @@ public class MonitorActivity extends Activity {
         }
 
         //mainActivity.setSPPaddress(address);
-        Intent data = new Intent();
-        setResult(RESULT_OK,data);
+        //Intent data = new Intent();
+        //setResult(RESULT_OK,data);
         finish(); //return to the first layout
     }
 
@@ -298,6 +348,29 @@ public class MonitorActivity extends Activity {
                 isBtConnected = true;
             }
             progress.dismiss();
+
+            activated = false;
+            Thread dataCollectorThread = new Thread(new Runnable(){
+                @Override
+                public void run(){
+
+                    while(true){
+                        while(activated){
+                            //readDataLine();
+                            while(wait);
+                            wait = true;
+                            myHandler.sendEmptyMessage(DO_UPDATE_TEXT);
+                        /*try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            //e.printStackTrace();
+                            msg("Timer messed up?");
+                        }*/
+                        }
+                    }
+                }
+            });
+            dataCollectorThread.start();
         }
     }
 

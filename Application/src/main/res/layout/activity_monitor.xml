@@ -84,4 +84,13 @@
         android:id="@+id/predictView"
         android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"
+        android:id="@+id/monitorDisconnect"
+        style="@style/TextColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

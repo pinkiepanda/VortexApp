@@ -193,13 +193,33 @@ public class SVMClass{
             //svm_problem problem = loadSVMProblem();
             //svm_model model = svm.svm_train(problem,param);
             //svm.svm_save_model(fullmodelPath + ".txt",model);
-            String svmTrainOptions = "-t 2 -c 1000 -g 0.001";
+            String svmTrainOptions = "-t 2 -c 100 -g 0.001";
             jniSvmTrain(svmTrainOptions+" "+fulldataTrainPath+".txt "+fullmodelPath+".txt");
         }catch(Exception e){
             worked = false;
         }
         return worked;
 
+    }
+
+    public boolean modelExists(){
+        File tempPath = MainActivity.getAppContext().getFilesDir();
+        File modelfile = new File(tempPath,MainActivity.modelPath+".txt");
+        if (modelfile.exists()) {
+            BufferedReader br;
+            try{
+                br = new BufferedReader(new FileReader(modelfile));
+                br.readLine();
+                return true;
+            }catch(FileNotFoundException fnfe){
+                return false;
+            }catch (IOException ioe){
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
     }
 
     public boolean predict(){
