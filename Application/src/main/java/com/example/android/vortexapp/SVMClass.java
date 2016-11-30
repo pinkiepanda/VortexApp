@@ -54,7 +54,7 @@ public class SVMClass{
 
     }*/
 
-    public svm_problem loadSVMProblem(){
+    /*public svm_problem loadSVMProblem(){
         File tempPath = MainActivity.getAppContext().getFilesDir();
         File datafile = new File(tempPath,MainActivity.dataTrainPath+".txt");
         if (!datafile.exists())
@@ -70,7 +70,7 @@ public class SVMClass{
             return null;
         }
 
-        /* need to count number of data lines / FSR sensors to initialize nodes array */
+        // --- need to count number of data lines / FSR sensors to initialize nodes array ---
         String templine;
         int numrows = 0, numcols = 0;
         while (true){
@@ -143,7 +143,7 @@ public class SVMClass{
         problem.x = nodes;
         problem.y = classes;
         return problem;
-    }
+    }*/
 
     public String processData(String rawdataline){
         String stringtoreturn = "null";
