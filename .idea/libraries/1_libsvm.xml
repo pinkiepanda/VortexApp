@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="1_libsvm">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Application/libs/libsvm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.example.android.bluetoothlegatt.R;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,8 +36,9 @@ public class MainActivity extends Activity {
     private boolean aButtonAlreadyPressed = false;*/
 
     public static final String LOG_TAG = "AndroidLibSvm";
-    public static String systemPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
-    public static String appFolderPath = systemPath+"libsvm/";
+    public static String externalPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    public static String appFolderPath = externalPath +"libsvm/";
+    //public static String systemPath = getAppContext().getFilesDir().getPath() + "/";
     public static String dataTrainPath = "libsvm_trainingData";
     public static String dataPredictPath = "libsvm_sensorData";
     public static String modelPath = "libsvm_model";
@@ -49,12 +49,21 @@ public class MainActivity extends Activity {
     Switch activateBtn;
     TextView commandText;
     public static BluetoothSocket btSocket = null;
-    private String SPPaddress = null;
+    private String SPPaddress = "";
     private String BLEaddress = null;
     private String BLEname = null;
     private static boolean activated = false;
     public static String TARGET_ACTIVITY = "target_activity";
     public static String EXTRA_ADDRESS = "device_address";
+    private boolean trained = false;
+
+    public String getSPPaddress() {
+        return SPPaddress;
+    }
+
+    public void setSPPaddress(String str) {
+        SPPaddress = str;
+    }
 
     //private BluetoothLeService mBluetoothLeService;
     //public connectionStateEnum mConnectionState;
@@ -129,6 +138,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        //String systemPath = MainActivity.getAppContext().getFilesDir().getPath();
+        String systemPath = getAppContext().getFilesDir().getPath() + "/";
+        //msg(systemPath);
+        //msg(dataTrainPath);
+        String fulldataTrainPath = systemPath + MainActivity.dataTrainPath;
+        msg(fulldataTrainPath);
+        String fullmodelPath = systemPath + MainActivity.modelPath;
+        msg(fullmodelPath);
         /*forwBtn = (Button)findViewById(R.id.forwardbutton);
         backBtn = (Button)findViewById(R.id.backbutton);
         rightBtn = (Button)findViewById(R.id.rightbutton);
@@ -212,10 +229,15 @@ public class MainActivity extends Activity {
     }
 
     public void goToTrain(View view){
-        Intent i = new Intent(MainActivity.this, TrainActivity.class);
-        //Change the activity.
-        i.putExtra(EXTRA_ADDRESS, SPPaddress); //this will be received at TrainActivity (class) Activity
-        startActivityForResult(i, 3);
+        //msg(SPPaddress);
+        /*if(trained){
+            Intent i = new Intent(MainActivity.this, MonitorActivity.class);
+            //Change the activity.
+            i.putExtra(EXTRA_ADDRESS, SPPaddress); //this will be received at TrainActivity (class) Activity
+            startActivity(i);
+        }*/
+        Intent i = new Intent(MainActivity.this,SVMActivity.class);
+        startActivity(i);
     }
 
     @Override
@@ -240,11 +262,23 @@ public class MainActivity extends Activity {
             if(resultCode == RESULT_OK){
                 SPPaddress = data.getStringExtra("SPPaddress");
                 msg("SPP address is: " + SPPaddress);
+                Intent i = new Intent(MainActivity.this, MonitorActivity.class);
+                i.putExtra(EXTRA_ADDRESS, SPPaddress);
+                startActivityForResult(i, 3);
             }
             else{
                 msg("SPP failed");
             }
-            //ActiviyFinishedNowDoSomethingAmazing();
+        }
+        else if (requestCode == 3){
+            //msg("back from SPP");
+            if(resultCode == RESULT_OK){
+                trained = true;
+                msg("Train successful.");
+            }
+            else{
+                //msg("Train failed.");
+            }
         }
 
     }
@@ -392,7 +426,7 @@ public class MainActivity extends Activity {
 
     private void copyAssetsDataIfNeed(){
         String assetsToCopy[] = {"heart_scale_predict","heart_scale_train","heart_scale"};
-        //String targetPath[] = {C.systemPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigTrain+".wav", C.systemPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigPredict+".wav",C.systemPath+C.INPUT_FOLDER+"SomeoneLikeYouShort.mp3"};
+        //String targetPath[] = {C.externalPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigTrain+".wav", C.externalPath+C.INPUT_FOLDER+C.INPUT_PREFIX+AudioConfigManager.inputConfigPredict+".wav",C.externalPath+C.INPUT_FOLDER+"SomeoneLikeYouShort.mp3"};
 
         for(int i=0; i<assetsToCopy.length; i++){
             String from = assetsToCopy[i];

@@ -1,4 +1,4 @@
-#Mon Nov 28 17:09:05 PST 2016
+#Tue Nov 29 17:24:04 PST 2016
 base.0=D\:\\Users\\Yesung\\AndroidStudioProjects\\VortexApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7c672531cdf23a187c841e8b17589de72499237c
 renamed.1=classes2.dex
 renamed.0=classes.dex

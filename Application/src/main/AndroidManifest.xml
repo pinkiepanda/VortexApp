@@ -35,42 +35,38 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
+        android:name="com.example.android.vortexapp.GlobalVariables"
         android:icon="@drawable/menrvaicon1"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light">
-
         <activity
             android:name="com.example.android.vortexapp.DeviceScanActivity"
-            android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="com.example.android.vortexapp.DeviceControlActivity">
-        </activity>
+            android:label="@string/app_name" />
+        <activity android:name="com.example.android.vortexapp.DeviceControlActivity" />
+
         <service
             android:name="com.example.android.vortexapp.BluetoothLeService"
             android:enabled="true" />
+
         <activity
             android:name="com.example.android.vortexapp.MainActivity"
             android:label="@string/app_name">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.example.android.vortexapp.DeviceListSPP"
-            android:label="@string/app_name">
-
-        </activity>
+            android:label="@string/app_name"
+            android:noHistory="true" />
         <activity
             android:name="com.example.android.vortexapp.TrainActivity"
-            android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="com.example.android.vortexapp.DeviceScanSPP"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name" />
+        <activity android:name="com.example.android.vortexapp.MonitorActivity"
+            android:label="@string/app_name"/>
+        <activity android:name="com.example.android.vortexapp.SVMActivity"></activity>
     </application>
 
 </manifest>

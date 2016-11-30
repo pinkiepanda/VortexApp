@@ -1,6 +1,7 @@
 package com.example.android.vortexapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
@@ -24,6 +25,8 @@ import com.example.android.bluetoothlegatt.R;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,6 +37,11 @@ import java.util.UUID;
 
 public class TrainActivity extends Activity {
 
+    private static Context c;
+    public static Context getAppContext() {
+        return c;
+    }
+
     Button btnTrain, btnFinish, btnCancel;
     TextView dataView, infoView;
     Spinner functionsList, timesList;
@@ -43,28 +51,35 @@ public class TrainActivity extends Activity {
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
     BufferedReader mBufferedReader = null;
-    SVMClass svmclass = new SVMClass();
+    SVMClass svmclass;
 
     //private boolean initialDisplay = true;
     String selectedFunction = "0";
     private int collectTime = 1;
     private boolean collectRun = false;
+    String totalData = "";
 
     //SPP UUID. Look for it
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+
+    MainActivity mainActivity = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //view of the TrainActivity
+        setContentView(R.layout.activity_train);
+        this.c = getApplicationContext();
+        svmclass = new SVMClass();
 
         Intent newint = getIntent();
         address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
+        //mainActivity = ((MainActivity)getApplicationContext());
         //btSocket = MainActivity.btSocket;
 
-        //view of the TrainActivity
-        setContentView(R.layout.activity_train);
+
 
         //call the widgtes
         btnTrain = (Button)findViewById(R.id.buttonTrain);
@@ -90,8 +105,8 @@ public class TrainActivity extends Activity {
             text = new String(bytes);
         }catch(IOException e){
             msg("failed read");
-        }
-        dataView.setText(text);*/
+        }*/
+        //dataViewLive.setText(MainActivity.externalPath);
 
         new ConnectSPP().execute(); //Call the class to connect
 
@@ -126,7 +141,8 @@ public class TrainActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                turnOffLed();   //method to turn off
+                finishTrain();
+                //turnOffLed();   //method to turn off
             }
         });
 
@@ -207,8 +223,11 @@ public class TrainActivity extends Activity {
             catch (IOException e)
             { msg("Error");}
         }
-        finish(); //return to the first layout
 
+        //mainActivity.setSPPaddress(address);
+        Intent data = new Intent();
+        setResult(RESULT_OK,data);
+        finish(); //return to the first layout
     }
 
     public void onBackPressed(){
@@ -220,7 +239,6 @@ public class TrainActivity extends Activity {
             readDataLine();
         }
     }
-
 
     private void readDataLine(){
         boolean wrote, read;
@@ -252,40 +270,37 @@ public class TrainActivity extends Activity {
         String fsrarray = svmclass.processData(rawdataline);
         if(read){
             dataView.setText(existingText + "\n" + selectedFunction + " " + fsrarray);
+            totalData += selectedFunction + " " + fsrarray + "\n";
         }
         else{
             dataView.setText(existingText + "\n" + "failed somewhere");
         }
     }
 
-    private void turnOffLed()
-    {
-        if (btSocket!=null)
-        {
-            try
-            {
-                btSocket.getOutputStream().write("0".getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
+    private void finishTrain(){
+        dataView.setText(totalData);
+        try {
+            File tempPath = MainActivity.getAppContext().getFilesDir();
+            File tempFile = new File(tempPath,MainActivity.dataTrainPath+".txt");
+            FileOutputStream stream = new FileOutputStream(tempFile);
+            stream.write(totalData.getBytes());
+            stream.close();
+            msg("wrote successful");
+        }catch(FileNotFoundException fnfe){
+            msg("failed file");
+        }catch(IOException e){
+            msg("failed write");
         }
-    }
-
-    private void turnOnLed()
-    {
-        if (btSocket!=null)
-        {
-            try
-            {
-                btSocket.getOutputStream().write("1".getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
+        boolean worked = svmclass.trainProblem();
+        msg("train worked: " + worked);
+        //Intent i = new Intent(TrainActivity.this,SVMActivity.class);
+        //startActivity(i);
+        /*if (worked){
+            Disconnect();
         }
+        else{
+            msg("train failed poop");
+        }*/
     }
 
     private void doMath(String selected){
@@ -305,7 +320,7 @@ public class TrainActivity extends Activity {
     }
 
     // fast way to call Toast
-    private void msg(String s)
+    public void msg(String s)
     {
         Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_monitor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="com.example.android.vortexapp.MonitorActivity">
+
+
+    <RadioButton
+        android:text="Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forwIndicator"
+        android:layout_toEndOf="@+id/forwIndicator"
+        android:id="@+id/rightIndicator" />
+
+    <RadioButton
+        android:text="Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backIndicator"
+        android:layout_toStartOf="@+id/forwIndicator"
+        android:id="@+id/leftIndicator" />
+
+    <RadioButton
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backIndicator"
+        android:layout_below="@+id/rightIndicator"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:text="Forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:id="@+id/forwIndicator"
+        style="@android:style/Widget.CompoundButton.RadioButton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:text="STOP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backIndicator"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/stopIndicator" />
+
+    <TextView
+        android:text="Incoming Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopIndicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:id="@+id/dataViewLive"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse" />
+
+    <Switch
+        android:text="Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:id="@+id/switch2" />
+
+</RelativeLayout>

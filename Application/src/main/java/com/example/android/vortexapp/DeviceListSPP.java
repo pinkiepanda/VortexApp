@@ -120,11 +120,12 @@ public class DeviceListSPP extends Activity
 
             //Toast.makeText(getApplicationContext(), TargetActivity, Toast.LENGTH_LONG).show();
 
-            Intent i = new Intent(DeviceListSPP.this, TrainActivity.class);
+            //Intent i = new Intent(DeviceListSPP.this, TrainActivity.class);
             //Change the activity.
-            i.putExtra(MainActivity.EXTRA_ADDRESS, address); //this will be received at TrainActivity (class) Activity
-            startActivity(i);
-
+            //i.putExtra(MainActivity.EXTRA_ADDRESS, address); //this will be received at TrainActivity (class) Activity
+            //startActivity(i);
+            //startActivityForResult(new Intent(DeviceListSPP.this, TrainActivity.class), 3);
+            Disconnect();
         }
     };
 

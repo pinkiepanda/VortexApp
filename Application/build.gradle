@@ -16,10 +16,11 @@ repositories {
 }
 
 dependencies {
-    compile "com.android.support:support-v4:24.1.1"
-    compile "com.android.support:support-v13:24.1.1"
-    compile "com.android.support:cardview-v7:24.1.1"
-    compile "com.android.support:appcompat-v7:24.1.1"
+    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:support-v13:24.1.1'
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile files('src/main/libs/libsvm.jar')
 }
 
 // The sample build uses multiple directories to
@@ -106,6 +107,7 @@ dependencies {
     compile "com.android.support:cardview-v7:24.1.1"
     compile "com.android.support:appcompat-v7:24.1.1"
     compile 'com.android.support:design:24.1.1'
+    compile files('libs/libsvm.jar')
     //compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
