@@ -193,7 +193,7 @@ public class SVMClass{
             //svm_problem problem = loadSVMProblem();
             //svm_model model = svm.svm_train(problem,param);
             //svm.svm_save_model(fullmodelPath + ".txt",model);
-            String svmTrainOptions = "-t 2";
+            String svmTrainOptions = "-t 2 -c 1000 -g 0.001";
             jniSvmTrain(svmTrainOptions+" "+fulldataTrainPath+".txt "+fullmodelPath+".txt");
         }catch(Exception e){
             worked = false;

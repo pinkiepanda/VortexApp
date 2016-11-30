@@ -5,7 +5,7 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="71218514378337"
+    timestamp="72295826694730"
     token="2484390341036615122"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -17,10 +17,10 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="15" />
+        duration="8" />
     <task
         name="verifier"
-        duration="2" />
+        duration="1" />
 
     <artifact
         location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
@@ -34,7 +34,7 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="71218514378337"
+        timestamp="72295826694730"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
