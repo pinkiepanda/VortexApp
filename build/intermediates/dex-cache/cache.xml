@@ -2,15 +2,6 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="787871951412550519b0222aba3c9df4cea49875">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.1_e9b4f98d30044f280af7f511aa313d8ee8683297.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
         jumboMode="true"
@@ -29,30 +20,12 @@
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_9bf144aea28031815d2196d7f583ac2d94c937bf\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.1.1_5008f6e7a81f6d4ba21cddc1896457f7181bc8f6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="6d7d803871e3203465f71a163e7af104f807b446">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_9bf144aea28031815d2196d7f583ac2d94c937bf.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="b279b6d60272d8f71ac4694edfbd91e785ad9069">
+        sha1="426ccedca0b01d4d0a97a10df73cf9236b1ff5d4">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_69b16bfa3bc00a818fef0f3676a891753b624aa0\classes.dex" />
     </item>
     <item
@@ -74,24 +47,6 @@
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_c13b987ca9ccc1b3a871c91e32cc7d92f0393ef8\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_e5a21fc6c44115849312b1921b6eee004625c272.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="f62e763609f65e47dc6c498760a4accf02776788">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.1_c13b987ca9ccc1b3a871c91e32cc7d92f0393ef8.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
         jumboMode="true"
@@ -110,15 +65,6 @@
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-24.1.1_793f2616eb71af567412f807be807dd919f9504d\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.1_5c4f530e2324421175caef79bfd9a6fada147dab.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
         jumboMode="true"
@@ -128,31 +74,13 @@
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_5c4f530e2324421175caef79bfd9a6fada147dab\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-support-v13-24.1.1_793f2616eb71af567412f807be807dd919f9504d.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="d8e9240ea90e644b2b816687fabdfafb92a2cfc3">
+        sha1="afa63ee37872b10ad45eed542050a94b93e407d2">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c672531cdf23a187c841e8b17589de72499237c\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.1_6015673e49dbbe3ac41f3206efaf6ecbdb301d3e.jar" />
     </item>
     <item
         is-multidex="true"
@@ -162,15 +90,6 @@
         revision="24.0.1"
         sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_584cc4cd8ebe3ff908a01b899ee01461f9e0504b\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\design\24.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\com.android.support-design-24.1.1_15d43941e9faa11bbc0dd1bf0fb4cac5474ab387.jar" />
     </item>
     <item
         is-multidex="true"
@@ -191,24 +110,6 @@
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_6015673e49dbbe3ac41f3206efaf6ecbdb301d3e\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_584cc4cd8ebe3ff908a01b899ee01461f9e0504b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\src\main\libs\libsvm.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="05bb103f265866c404d13d043d04adef1aacda2e">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\libsvm_70747f9bae837126f996f74039b91ed7fdebc702.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
         jumboMode="true"
@@ -216,15 +117,6 @@
         revision="24.0.1"
         sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
         <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_ecd4abb48a88d37ad022faebe20ff54208941f07\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
-        <dex dex="D:\Users\Yesung\AndroidStudioProjects\VortexApp\Application\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_ecd4abb48a88d37ad022faebe20ff54208941f07.jar" />
     </item>
     <item
         is-multidex="true"
